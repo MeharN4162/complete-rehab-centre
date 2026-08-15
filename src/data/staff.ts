@@ -20,7 +20,6 @@ export const treatingPractitioners: StaffMember[] = [
     name: "Dr. Ravdeep Sekhon",
     title: "BSc, DC, Acupuncture — Rehabilitation Specialist Chiropractor",
   },
-  { name: "Neha Gupta", title: "Resident Physiotherapist" },
   { name: "Harleen Kaur", title: "Resident Physiotherapist" },
 ];
 
@@ -29,22 +28,12 @@ export const treatingPractitioners: StaffMember[] = [
 export const additionalTeamMembers: string[] = [
   "Bobby",
   "Sara",
-  "Jem",
-  "Joana",
   "Navjot",
   "Shubhneet",
-  "Tameika",
   "Kawal",
   "Floyd",
   "Marilia",
   "Ruby",
-  "Veerpal",
   "Niveta",
-  "Bina",
-  "Dharmik",
-  "Harshad",
   "Dipanshi",
-  "Khushpreet",
-  "Dolly",
-  "Reetinder",
 ];
