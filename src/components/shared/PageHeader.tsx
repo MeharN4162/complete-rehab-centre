@@ -1,4 +1,5 @@
 import Container from "@/components/ui/Container";
+import MovingArrows from "@/components/ui/MovingArrows";
 
 type PageHeaderProps = {
   title: string;
@@ -17,6 +18,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-gold/20 blur-[100px]"
       />
+      <MovingArrows className="bottom-6" />
       <Container className="relative">
         <span className="animate-fade-in-up flex items-center gap-2.5">
           <span className="h-px w-8 bg-gold" />

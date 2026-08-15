@@ -5,6 +5,7 @@ import Image from "next/image";
 import { heroSlides } from "@/data/about";
 import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
+import MovingArrows from "@/components/ui/MovingArrows";
 import { LinkButton } from "@/components/ui/Button";
 
 const tickerItems = [
@@ -44,6 +45,7 @@ export default function Hero() {
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -bottom-40 right-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]"
       />
+      <MovingArrows className="top-8" />
 
       <Container className="relative grid gap-0 py-10 sm:py-14 lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-16">
         {/* Text panel */}
@@ -109,7 +111,7 @@ export default function Hero() {
 
         {/* Image panel — contained, framed, clearly separate from the text */}
         <div className="animate-fade-in-up-2 order-1 mb-8 lg:order-2 lg:mb-0">
-          <div className="relative rounded-[1.9rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-2xl">
+          <div className="relative rounded-[1.9rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-2xl">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.65rem] sm:aspect-[16/10]">
               {heroSlides.map((s, index) => (
                 <div

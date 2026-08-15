@@ -79,7 +79,7 @@ export default function ContactUsPage() {
                 </ul>
               </div>
 
-              <div className="relative rounded-[1.4rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-lg">
+              <div className="relative rounded-[1.4rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-lg">
                 <div className="h-72 w-full overflow-hidden rounded-[1.15rem] bg-bg-alt">
                   {/* bg-bg-alt (not the frame's violet) sits behind the iframe so a
                       slow map load or an ad-blocker blocking the Google embed shows a

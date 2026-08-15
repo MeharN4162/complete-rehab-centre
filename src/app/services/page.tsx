@@ -55,7 +55,7 @@ export default function ServicesPage() {
                 </li>
               </ul>
             </Reveal>
-            <Reveal dir="right" delay={250} className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-lg">
+            <Reveal dir="right" delay={250} className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-lg">
               <div className="relative h-64 overflow-hidden rounded-[1.5rem] md:h-80">
                 <Image
                   src="/images/services-intro.jpg"
@@ -79,7 +79,7 @@ export default function ServicesPage() {
               <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
                 <Reveal
                   dir={index % 2 === 0 ? "left" : "right"}
-                  className={`relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl ${index % 2 === 1 ? "md:order-2" : ""}`}
+                  className={`relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl ${index % 2 === 1 ? "md:order-2" : ""}`}
                 >
                   <div className="relative h-64 overflow-hidden rounded-[1.5rem] sm:h-80">
                     <Image
