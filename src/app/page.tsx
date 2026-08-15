@@ -30,7 +30,7 @@ export default function HomePage() {
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-violet/15 blur-[100px]" />
         <Container className="relative">
           <SectionHeading eyebrow="Patient stories" title="Your appreciation" light />
-          <Reveal delay={150} className="mt-14">
+          <Reveal delay={220} className="mt-14">
             <TestimonialsCarousel testimonials={testimonials} dark />
           </Reveal>
         </Container>
@@ -41,17 +41,17 @@ export default function HomePage() {
       <section className="relative overflow-hidden pb-24 sm:pb-32">
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-96 w-[36rem] -translate-x-1/2 rounded-full bg-violet-tint/70 blur-3xl" />
         <Container className="relative">
-          <Reveal className="relative overflow-hidden rounded-3xl bg-bg-alt shadow-sm ring-1 ring-border">
+          <div className="relative overflow-hidden rounded-3xl bg-bg-alt shadow-sm ring-1 ring-border">
             <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold-tint blur-3xl" />
             <div className="relative grid gap-10 p-8 lg:grid-cols-2 lg:items-center lg:p-14">
-              <div>
+              <Reveal dir="left">
                 <SectionHeading eyebrow="Get in touch" title="Contact us" align="left" />
                 <div className="mt-8">
                   <AppointmentForm />
                 </div>
-              </div>
+              </Reveal>
 
-              <div className="flex flex-col gap-6">
+              <Reveal dir="right" delay={220} className="flex flex-col gap-6">
                 <div className="flex items-center gap-4 rounded-2xl bg-white p-6 shadow-glow-violet ring-1 ring-violet/10">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-violet to-violet-dim text-white">
                     <Icon name="phone" size={22} />
@@ -83,9 +83,9 @@ export default function HomePage() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         </Container>
       </section>
     </>

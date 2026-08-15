@@ -23,14 +23,14 @@ export default function ServicesPage() {
         subtitle="Complete treatment services to help you recover from injuries at Complete Rehab Centre."
       />
 
-      <section className="py-24 sm:py-28">
+      <section className="relative overflow-hidden py-24 sm:py-28">
         <Container>
-          <Reveal className="grid gap-10 md:grid-cols-3 md:items-center">
-            <div className="md:col-span-2">
+          <div className="grid gap-10 md:grid-cols-3 md:items-center">
+            <Reveal dir="left" className="md:col-span-2">
               <h2 className="font-heading text-2xl font-semibold text-ink">We specialize in</h2>
               <ul className="mt-6 grid list-none grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
                 {services.map((service, i) => (
-                  <Reveal key={service.slug} as="li" delay={200 + i * 40}>
+                  <Reveal key={service.slug} as="li" delay={280 + i * 60}>
                     <a
                       href={`#${service.anchor}`}
                       className="flex items-center gap-2.5 text-body transition-colors hover:translate-x-1 hover:text-violet-dark"
@@ -54,8 +54,8 @@ export default function ServicesPage() {
                   </span>
                 </li>
               </ul>
-            </div>
-            <div className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-lg">
+            </Reveal>
+            <Reveal dir="right" delay={250} className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-lg">
               <div className="relative h-64 overflow-hidden rounded-[1.5rem] md:h-80">
                 <Image
                   src="/images/services-intro.jpg"
@@ -65,8 +65,8 @@ export default function ServicesPage() {
                   className="object-cover"
                 />
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -75,9 +75,12 @@ export default function ServicesPage() {
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-40 h-96 w-96 rounded-full bg-gold/10 blur-[130px]" />
         <Container className="relative space-y-16 sm:space-y-20">
           {services.map((service, index) => (
-            <Reveal key={service.slug} id={service.anchor} className="scroll-mt-28" dir={index % 2 === 0 ? "left" : "right"}>
+            <div key={service.slug} id={service.anchor} className="scroll-mt-28">
               <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
-                <div className={`relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                <Reveal
+                  dir={index % 2 === 0 ? "left" : "right"}
+                  className={`relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl ${index % 2 === 1 ? "md:order-2" : ""}`}
+                >
                   <div className="relative h-64 overflow-hidden rounded-[1.5rem] sm:h-80">
                     <Image
                       src={service.image}
@@ -87,8 +90,12 @@ export default function ServicesPage() {
                       className="object-cover"
                     />
                   </div>
-                </div>
-                <div className={index % 2 === 1 ? "md:order-1" : ""}>
+                </Reveal>
+                <Reveal
+                  dir={index % 2 === 0 ? "right" : "left"}
+                  delay={220}
+                  className={index % 2 === 1 ? "md:order-1" : ""}
+                >
                   <h2 className="font-heading text-2xl font-semibold text-white">{service.name}</h2>
                   <div className="mt-4 space-y-3 text-white/70">
                     {service.paragraphs.map((p, i) => (
@@ -116,9 +123,9 @@ export default function ServicesPage() {
                       <Icon name="arrowRight" size={14} className="transition-all" />
                     </Link>
                   )}
-                </div>
+                </Reveal>
               </div>
-            </Reveal>
+            </div>
           ))}
         </Container>
       </section>

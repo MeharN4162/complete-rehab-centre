@@ -145,19 +145,19 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
    switches to "hidden then reveal on intersection" only after confirming JS runs. */
 [data-reveal] {
   opacity: 0;
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 [data-reveal="false"][data-reveal-dir="up"] {
-  transform: translateY(24px);
+  transform: translateY(32px);
 }
 [data-reveal="false"][data-reveal-dir="left"] {
-  transform: translateX(-28px);
+  transform: translateX(-40px);
 }
 [data-reveal="false"][data-reveal-dir="right"] {
-  transform: translateX(28px);
+  transform: translateX(40px);
 }
 [data-reveal="false"][data-reveal-dir="scale"] {
-  transform: scale(0.94);
+  transform: scale(0.9);
 }
 [data-reveal="true"] {
   opacity: 1;
@@ -193,16 +193,16 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .animate-fade-in-up-1 {
-  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 .animate-fade-in-up-2 {
-  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+  animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
 }
 .animate-fade-in-up-3 {
-  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
 }
 
 /* Continuous marquee ticker */

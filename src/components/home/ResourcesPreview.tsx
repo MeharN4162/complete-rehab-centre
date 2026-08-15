@@ -24,7 +24,7 @@ export default function ResourcesPreview() {
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {featured.map((article, i) => (
-            <Reveal key={article.slug} delay={i * 90}>
+            <Reveal key={article.slug} delay={i * 140}>
               <Link
                 href={`/resources/${article.slug}`}
                 className="group flex flex-col gap-5 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-border transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:ring-violet/30 sm:flex-row sm:items-center"

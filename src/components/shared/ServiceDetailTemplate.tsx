@@ -15,10 +15,10 @@ export default function ServiceDetailTemplate({ service }: { service: Service })
     <>
       <PageHeader title={service.name} subtitle={service.shortDescription} />
 
-      <section className="py-24 sm:py-32">
+      <section className="relative overflow-hidden py-24 sm:py-32">
         <Container>
-          <Reveal className="grid items-start gap-10 lg:grid-cols-2">
-            <div className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl">
+          <div className="grid items-start gap-10 lg:grid-cols-2">
+            <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl">
               <div className="relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
                 <Image
                   src={service.image}
@@ -29,8 +29,8 @@ export default function ServiceDetailTemplate({ service }: { service: Service })
                   priority
                 />
               </div>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal dir="right" delay={220}>
               <div className="space-y-4 text-body">
                 {service.paragraphs.map((p, i) => (
                   <p key={i} className="leading-relaxed">
@@ -55,8 +55,8 @@ export default function ServiceDetailTemplate({ service }: { service: Service })
                   {primaryPhone.number}
                 </LinkButton>
               </div>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </Container>
       </section>
 

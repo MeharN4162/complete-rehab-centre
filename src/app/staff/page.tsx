@@ -18,10 +18,10 @@ export default function StaffPage() {
     <>
       <PageHeader title="Staff" subtitle="A versatile, multidisciplinary team working together on your recovery." />
 
-      <section className="py-24 sm:py-32">
+      <section className="relative overflow-hidden py-24 sm:py-32">
         <Container>
-          <Reveal className="grid items-center gap-10 md:grid-cols-2">
-            <div className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl">
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl">
               <div className="relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
                 <Image
                   src="/images/staff-about.jpg"
@@ -31,12 +31,12 @@ export default function StaffPage() {
                   className="object-cover"
                 />
               </div>
-            </div>
-            <p className="text-lg leading-relaxed text-body">
+            </Reveal>
+            <Reveal as="p" dir="right" delay={220} className="text-lg leading-relaxed text-body">
               Our staff is versatile. They provide services to work, based on a solid understanding between you,
               CRC and our mutual client.
-            </p>
-          </Reveal>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -47,7 +47,7 @@ export default function StaffPage() {
           <SectionHeading eyebrow="Meet the team" title="Treating Practitioners" light />
           <div className="mt-12 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {treatingPractitioners.map((member, i) => (
-              <Reveal key={member.name} delay={i * 110} dir={i % 2 === 0 ? "left" : "right"} className="h-full">
+              <Reveal key={member.name} delay={i * 160} dir={i % 2 === 0 ? "left" : "right"} className="h-full">
                 <div className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet/40 hover:shadow-glow-violet">
                   <div className="relative flex items-center justify-between">
                     <span className="btn-sheen flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-violet ring-1 ring-white/10 transition-all duration-300 group-hover:bg-violet group-hover:text-ink group-hover:ring-violet">
@@ -72,7 +72,7 @@ export default function StaffPage() {
           </Reveal>
           <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-x-8 gap-y-3 text-center sm:grid-cols-3 md:grid-cols-4">
             {additionalTeamMembers.map((name, i) => (
-              <Reveal key={name} delay={i * 70} dir={i % 2 === 0 ? "left" : "right"}>
+              <Reveal key={name} delay={i * 100} dir={i % 2 === 0 ? "left" : "right"}>
                 <p className="flex items-center justify-center gap-2 text-sm text-body">
                   <Icon name="checkCircle" size={14} className="shrink-0 text-violet-dark" />
                   {name}

@@ -37,7 +37,7 @@ export default function ServicesPreview() {
           {detailServices.map((service, i) => {
             const isFeatured = i === 0;
             return (
-              <Reveal key={service.slug} delay={i * 90} dir={i % 2 === 0 ? "up" : "scale"} className={spans[i]}>
+              <Reveal key={service.slug} delay={i * 140} dir={i % 2 === 0 ? "up" : "scale"} className={spans[i]}>
                 <div className={`group relative h-full min-h-[240px] rounded-[1.4rem] bg-gradient-to-br ${cardBorder} p-[3px] shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-glow-violet lg:min-h-0`}>
                   <Link href={`/services/${service.slug}`} className="relative flex h-full flex-col overflow-hidden rounded-[1.15rem] bg-ink">
                     <Image

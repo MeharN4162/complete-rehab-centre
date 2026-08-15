@@ -16,7 +16,7 @@ export default function AssessmentsPreview() {
 
         <div className="mt-14 divide-y divide-border border-y border-border">
           {featuredAssessments.map((assessment, i) => (
-            <Reveal key={assessment.slug} delay={i * 80} dir={i % 2 === 0 ? "left" : "right"}>
+            <Reveal key={assessment.slug} delay={i * 130} dir={i % 2 === 0 ? "left" : "right"}>
               <Link
                 href={`/assessments-services#${assessment.slug}`}
                 className="btn-sheen group relative flex items-center gap-6 rounded-2xl px-4 py-7 transition-all duration-300 hover:bg-white sm:gap-8 sm:px-6"

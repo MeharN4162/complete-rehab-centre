@@ -22,7 +22,7 @@ export default function TestimonialsPage() {
         <Container className="relative">
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 90} dir={i % 2 === 0 ? "left" : "right"}>
+              <Reveal key={t.name} delay={i * 140} dir={i % 2 === 0 ? "left" : "right"}>
                 <figure className="group flex h-full flex-col rounded-3xl bg-white p-8 shadow-sm ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-violet">
                   <span className="btn-sheen flex h-11 w-11 items-center justify-center rounded-full bg-violet-tint text-violet-dark transition-all duration-300 group-hover:bg-violet group-hover:text-white">
                     <Icon name="quote" size={20} />

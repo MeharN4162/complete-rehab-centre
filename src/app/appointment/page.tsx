@@ -60,7 +60,7 @@ export default function AppointmentPage() {
               </div>
             </Reveal>
 
-            <Reveal delay={120} dir="right" className="relative overflow-hidden rounded-3xl bg-bg-alt p-6 shadow-sm ring-1 ring-border sm:p-10 lg:col-span-3">
+            <Reveal delay={200} dir="right" className="relative overflow-hidden rounded-3xl bg-bg-alt p-6 shadow-sm ring-1 ring-border sm:p-10 lg:col-span-3">
               <div aria-hidden className="animate-float-slow pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-tint blur-3xl" />
               <div className="relative">
                 <AppointmentForm />

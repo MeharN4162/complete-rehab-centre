@@ -79,7 +79,7 @@ export default function ArticleTemplate({ article }: { article: Article }) {
           <h2 className="font-heading text-xl font-semibold text-white">More Resources</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             {more.map((a, i) => (
-              <Reveal key={a.slug} delay={i * 90}>
+              <Reveal key={a.slug} delay={i * 140}>
                 <Link
                   href={`/resources/${a.slug}`}
                   className="glass group block rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet/40 hover:shadow-glow-violet"

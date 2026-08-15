@@ -30,7 +30,7 @@ export default function ContactUsPage() {
               </div>
             </Reveal>
 
-            <Reveal delay={120} dir="right" className="space-y-6 lg:col-span-2">
+            <Reveal delay={200} dir="right" className="space-y-6 lg:col-span-2">
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
                 <div className="group rounded-2xl bg-white p-5 shadow-sm ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-violet">
                   <div className="flex items-center gap-3">

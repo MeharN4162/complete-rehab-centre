@@ -54,7 +54,7 @@ export default function WhyChooseUs() {
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, i) => (
-            <Reveal key={feature.title} delay={i * 80} dir={i % 3 === 0 ? "left" : i % 3 === 2 ? "right" : "up"}>
+            <Reveal key={feature.title} delay={i * 130} dir={i % 3 === 0 ? "left" : i % 3 === 2 ? "right" : "up"}>
               <div className="glass group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet/40 hover:shadow-glow-violet">
                 <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-violet ring-1 ring-white/10 transition-all duration-300 group-hover:bg-violet group-hover:text-ink group-hover:ring-violet">
                   <Icon name={feature.icon} size={22} />

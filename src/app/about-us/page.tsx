@@ -30,8 +30,8 @@ export default function AboutUsPage() {
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-violet/20 blur-[120px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]" />
         <Container className="relative">
-          <Reveal className="grid items-center gap-10 md:grid-cols-2">
-            <div className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-2xl">
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-2xl">
               <div className="relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
                 <Image
                   src="/images/about-values.jpg"
@@ -42,8 +42,8 @@ export default function AboutUsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent" />
               </div>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal dir="right" delay={220}>
               <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.15em] text-violet">
                 <Icon name="heart" size={14} />
                 Our approach
@@ -53,14 +53,14 @@ export default function AboutUsPage() {
               </h2>
               <ul className="mt-6 space-y-4">
                 {aboutContent.values.slice(1).map((value, i) => (
-                  <Reveal key={i} delay={150 + i * 90} as="li" className="flex gap-3 leading-relaxed text-white/75">
+                  <Reveal key={i} delay={400 + i * 140} as="li" className="flex gap-3 leading-relaxed text-white/75">
                     <Icon name="checkCircle" size={20} className="mt-0.5 shrink-0 text-violet" />
                     {value}
                   </Reveal>
                 ))}
               </ul>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </Container>
       </section>
 

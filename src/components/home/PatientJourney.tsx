@@ -36,7 +36,7 @@ export default function PatientJourney() {
         <div className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div aria-hidden className="absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-transparent via-violet/40 to-transparent lg:block" />
           {steps.map((step, i) => (
-            <Reveal key={step.title} delay={i * 100} dir="up" className="relative">
+            <Reveal key={step.title} delay={i * 150} dir="up" className="relative">
               <div className="group relative flex flex-col">
                 <div className="btn-sheen relative z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-violet bg-bg text-violet shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-violet group-hover:to-violet-dim group-hover:text-white group-hover:shadow-glow-violet">
                   <Icon name={step.icon} size={20} />
