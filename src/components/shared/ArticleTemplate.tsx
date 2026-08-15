@@ -17,12 +17,12 @@ export default function ArticleTemplate({ article }: { article: Article }) {
         <Container narrow className="relative">
           <Link
             href="/resources"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-white/70 hover:text-white"
+            className="animate-fade-in-up inline-flex items-center gap-1.5 text-sm font-medium text-white/70 hover:text-white"
           >
             <Icon name="chevronLeft" size={14} />
             Back to Resources
           </Link>
-          <h1 className="mt-4 font-heading text-3xl font-bold text-white sm:text-4xl">{article.title}</h1>
+          <h1 className="animate-fade-in-up-1 mt-4 font-heading text-3xl font-bold text-white sm:text-4xl">{article.title}</h1>
         </Container>
       </section>
 
@@ -34,7 +34,7 @@ export default function ArticleTemplate({ article }: { article: Article }) {
             </div>
           </Reveal>
 
-          <div className="space-y-4 text-body">
+          <Reveal className="space-y-4 text-body">
             {article.body.map((block, i) => {
               if (block.type === "h3") {
                 return (
@@ -61,7 +61,7 @@ export default function ArticleTemplate({ article }: { article: Article }) {
                 </p>
               );
             })}
-          </div>
+          </Reveal>
 
           <div className="mt-10 flex flex-wrap gap-4 border-t border-border pt-8">
             <LinkButton href="/appointment">Request an Appointment</LinkButton>

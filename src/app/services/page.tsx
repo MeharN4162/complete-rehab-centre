@@ -29,8 +29,8 @@ export default function ServicesPage() {
             <div className="md:col-span-2">
               <h2 className="font-heading text-2xl font-semibold text-ink">We specialize in</h2>
               <ul className="mt-6 grid list-none grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
-                {services.map((service) => (
-                  <li key={service.slug}>
+                {services.map((service, i) => (
+                  <Reveal key={service.slug} as="li" delay={200 + i * 40}>
                     <a
                       href={`#${service.anchor}`}
                       className="flex items-center gap-2.5 text-body transition-colors hover:translate-x-1 hover:text-violet-dark"
@@ -38,7 +38,7 @@ export default function ServicesPage() {
                       <Icon name="chevronRight" size={14} className="shrink-0 text-violet-dark" />
                       {service.name}
                     </a>
-                  </li>
+                  </Reveal>
                 ))}
                 <li className="flex items-start gap-2.5 text-body/60">
                   <Icon name="chevronRight" size={14} className="mt-1 shrink-0 text-body/40" />
@@ -125,21 +125,23 @@ export default function ServicesPage() {
 
       <section className="py-24 text-center sm:py-28">
         <Container>
-          <h2 className="font-heading text-2xl font-semibold text-ink sm:text-3xl">
-            Not sure which service is right for you?
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-body">
-            Call us and our team will help point you in the right direction.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <LinkButton href={primaryPhone.href}>
-              <Icon name="phone" size={16} />
-              Call {primaryPhone.number}
-            </LinkButton>
-            <LinkButton href="/appointment" variant="outline">
-              Request an Appointment
-            </LinkButton>
-          </div>
+          <Reveal dir="scale">
+            <h2 className="font-heading text-2xl font-semibold text-ink sm:text-3xl">
+              Not sure which service is right for you?
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-body">
+              Call us and our team will help point you in the right direction.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <LinkButton href={primaryPhone.href}>
+                <Icon name="phone" size={16} />
+                Call {primaryPhone.number}
+              </LinkButton>
+              <LinkButton href="/appointment" variant="outline">
+                Request an Appointment
+              </LinkButton>
+            </div>
+          </Reveal>
         </Container>
       </section>
     </>

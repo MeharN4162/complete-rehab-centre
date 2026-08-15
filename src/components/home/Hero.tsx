@@ -48,17 +48,22 @@ export default function Hero() {
       <Container className="relative grid gap-0 py-10 sm:py-14 lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-16">
         {/* Text panel */}
         <div className="order-2 lg:order-1">
-          <span className="glass inline-flex items-center gap-3 rounded-full px-4 py-1.5 text-xs text-white/80">
+          <span className="glass animate-fade-in-up inline-flex items-center gap-3 rounded-full px-4 py-1.5 text-xs text-white/80">
             <span className="h-1.5 w-1.5 animate-pulse-slow rounded-full bg-violet" />
             <span className="text-violet">{String(active + 1).padStart(2, "0")}</span>
             <span className="h-px w-8 bg-white/30" />
             {String(heroSlides.length).padStart(2, "0")}
           </span>
-          <h1 className="mt-5 font-heading text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1
+            key={active}
+            className="animate-fade-in-up-1 mt-5 font-heading text-4xl font-bold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl"
+          >
             {slide.heading}
           </h1>
-          <p className="mt-4 max-w-md text-base font-medium text-white/75 sm:text-lg">{slide.tagline}</p>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <p key={`tag-${active}`} className="animate-fade-in-up-2 mt-4 max-w-md text-base font-medium text-white/75 sm:text-lg">
+            {slide.tagline}
+          </p>
+          <div className="animate-fade-in-up-3 mt-7 flex flex-wrap gap-3">
             <LinkButton href={slide.href}>
               Learn More
               <Icon name="arrowRight" size={16} />
@@ -68,7 +73,7 @@ export default function Hero() {
             </LinkButton>
           </div>
 
-          <div className="mt-9 flex items-center gap-4">
+          <div className="animate-fade-in-up-3 mt-9 flex items-center gap-4">
             <button
               type="button"
               onClick={() => goTo(active - 1)}
@@ -103,7 +108,7 @@ export default function Hero() {
         </div>
 
         {/* Image panel — contained, framed, clearly separate from the text */}
-        <div className="order-1 mb-8 lg:order-2 lg:mb-0">
+        <div className="animate-fade-in-up-2 order-1 mb-8 lg:order-2 lg:mb-0">
           <div className="relative rounded-[1.9rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-2xl">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.65rem] sm:aspect-[16/10]">
               {heroSlides.map((s, index) => (

@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import PageHeader from "@/components/shared/PageHeader";
 import AppointmentForm from "@/components/shared/AppointmentForm";
 import Icon from "@/components/ui/Icon";
+import Reveal from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "Appointment",
@@ -24,7 +25,7 @@ export default function AppointmentPage() {
         <div aria-hidden className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-violet-tint blur-3xl" />
         <Container className="relative">
           <div className="grid gap-8 lg:grid-cols-5">
-            <div className="relative min-h-[320px] rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl lg:col-span-2">
+            <Reveal dir="left" className="relative min-h-[320px] rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] shadow-xl lg:col-span-2">
               <div className="relative h-full min-h-[314px] overflow-hidden rounded-[1.5rem]">
                 <Image
                   src="/images/hero-medical-assessment.jpg"
@@ -38,7 +39,7 @@ export default function AppointmentPage() {
                   <span className="animate-pulse-slow flex h-11 w-11 items-center justify-center rounded-full bg-white/15">
                     <Icon name="clock" size={20} />
                   </span>
-                  <h2 className="mt-4 font-heading text-2xl font-semibold">Office Hours</h2>
+                  <h2 className="mt-4 font-heading text-2xl font-semibold text-white">Office Hours</h2>
                   <ul className="mt-5 space-y-2 text-sm">
                     {siteConfig.hours.map((h) => (
                       <li key={h.day} className="flex justify-between border-b border-white/20 pb-2">
@@ -57,14 +58,14 @@ export default function AppointmentPage() {
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
-            <div className="relative overflow-hidden rounded-3xl bg-bg-alt p-6 shadow-sm ring-1 ring-border sm:p-10 lg:col-span-3">
+            <Reveal delay={120} dir="right" className="relative overflow-hidden rounded-3xl bg-bg-alt p-6 shadow-sm ring-1 ring-border sm:p-10 lg:col-span-3">
               <div aria-hidden className="animate-float-slow pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-violet-tint blur-3xl" />
               <div className="relative">
                 <AppointmentForm />
               </div>
-            </div>
+            </Reveal>
           </div>
         </Container>
       </section>

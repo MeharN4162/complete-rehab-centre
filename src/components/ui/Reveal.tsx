@@ -8,13 +8,14 @@ type RevealProps = {
   delay?: number;
   id?: string;
   dir?: "up" | "left" | "right" | "scale";
+  as?: "div" | "li";
 };
 
 // Defaults to visible (no `data-reveal` attribute) so content never disappears
 // if JS fails to load. Only after mount — confirming JS is actually running —
 // do we switch to "hidden, then reveal on intersection".
-export default function Reveal({ children, className = "", delay = 0, id, dir = "up" }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+export default function Reveal({ children, className = "", delay = 0, id, dir = "up", as = "div" }: RevealProps) {
+  const ref = useRef<HTMLDivElement & HTMLLIElement>(null);
   const [state, setState] = useState<"idle" | "hidden" | "visible">("idle");
 
   useEffect(() => {
@@ -34,8 +35,10 @@ export default function Reveal({ children, className = "", delay = 0, id, dir = 
     return () => observer.disconnect();
   }, []);
 
+  const Tag = as;
+
   return (
-    <div
+    <Tag
       ref={ref}
       id={id}
       data-reveal={state === "idle" ? undefined : state === "visible" ? "true" : "false"}
@@ -44,6 +47,6 @@ export default function Reveal({ children, className = "", delay = 0, id, dir = 
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

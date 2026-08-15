@@ -22,7 +22,7 @@ export default function TestimonialsPage() {
         <Container className="relative">
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={(i % 2) * 100} dir={i % 2 === 0 ? "left" : "right"}>
+              <Reveal key={t.name} delay={i * 90} dir={i % 2 === 0 ? "left" : "right"}>
                 <figure className="group flex h-full flex-col rounded-3xl bg-white p-8 shadow-sm ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-violet">
                   <span className="btn-sheen flex h-11 w-11 items-center justify-center rounded-full bg-violet-tint text-violet-dark transition-all duration-300 group-hover:bg-violet group-hover:text-white">
                     <Icon name="quote" size={20} />
@@ -34,7 +34,7 @@ export default function TestimonialsPage() {
             ))}
           </div>
 
-          <div className="relative mt-16 overflow-hidden rounded-3xl bg-ink px-8 py-12 text-center">
+          <Reveal className="relative mt-16 overflow-hidden rounded-3xl bg-ink px-8 py-12 text-center">
             <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-violet/25 blur-[100px]" />
             <h2 className="relative font-heading text-xl font-semibold text-white sm:text-2xl">
               Had a great experience with us?
@@ -43,7 +43,7 @@ export default function TestimonialsPage() {
             <div className="relative mt-6">
               <LinkButton href="/contact-us">Contact Us</LinkButton>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
     </>

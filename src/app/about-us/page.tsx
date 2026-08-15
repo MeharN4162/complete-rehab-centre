@@ -53,10 +53,10 @@ export default function AboutUsPage() {
               </h2>
               <ul className="mt-6 space-y-4">
                 {aboutContent.values.slice(1).map((value, i) => (
-                  <li key={i} className="flex gap-3 leading-relaxed text-white/75">
+                  <Reveal key={i} delay={150 + i * 90} as="li" className="flex gap-3 leading-relaxed text-white/75">
                     <Icon name="checkCircle" size={20} className="mt-0.5 shrink-0 text-violet" />
                     {value}
-                  </li>
+                  </Reveal>
                 ))}
               </ul>
             </div>

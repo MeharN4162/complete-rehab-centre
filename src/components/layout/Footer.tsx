@@ -30,7 +30,7 @@ export default function Footer() {
           <Reveal className="flex flex-col items-center gap-8 py-16 text-center sm:flex-row sm:justify-between sm:py-20 sm:text-left">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">Ready when you are</p>
-              <h2 className="mt-3 text-[clamp(1.75rem,1.2rem+2vw,3rem)] font-semibold leading-tight">
+              <h2 className="mt-3 text-[clamp(1.75rem,1.2rem+2vw,3rem)] font-semibold leading-tight text-white">
                 Let&rsquo;s get your recovery started.
               </h2>
             </div>

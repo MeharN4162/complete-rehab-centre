@@ -23,7 +23,7 @@ export default function ResourcesPage() {
         <Container className="relative">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((article, i) => (
-              <Reveal key={article.slug} delay={(i % 3) * 90} dir={i % 3 === 0 ? "left" : i % 3 === 2 ? "right" : "up"}>
+              <Reveal key={article.slug} delay={i * 90} dir={i % 3 === 0 ? "left" : i % 3 === 2 ? "right" : "up"}>
                 <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.6rem] bg-white shadow-sm ring-1 ring-border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-violet hover:ring-violet/30">
                   <Link href={`/resources/${article.slug}`} className="relative h-44 w-full overflow-hidden">
                     <Image
