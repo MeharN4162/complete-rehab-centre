@@ -32,3 +32,4 @@ npm run start
 
 - This is a frontend-only build — there is no backend. The appointment/contact forms are not wired to a booking system; submitting one shows an honest notice directing the visitor to call the clinic directly, rather than a fake success message.
 - Business information (address, phone numbers, hours) lives in `src/data/site.ts` — update it there and it propagates across the header, footer, contact page, appointment page and structured data.
+# complete-rehab-centre
