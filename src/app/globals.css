@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand */
+  --color-brand: #8a0303;
+  --color-brand-dark: #5c0001;
+  --color-brand-light: #c4362f;
+  --color-brand-tint: #fdf1f0;
+  --color-brand-tint-2: #f7e3e1;
+
+  /* Accent (secondary, editorial detail) */
+  --color-gold: #c9a15a;
+  --color-gold-dark: #9c7a3d;
+  --color-gold-tint: #f8f1e4;
+
+  /* Legacy turquoise accent — no longer used in components, kept defined only so
+     nothing breaks if referenced; the site now runs a single dominant accent
+     (violet, below) plus gold for editorial detail, deliberately not mixed. */
+  --color-electric: #0dd9c6;
+  --color-electric-dim: #0aa596;
+  --color-electric-tint: #e0faf7;
+  --color-electric-dark: #086b60;
+
+  /* Signature accent — the site's one dominant interactive color. Gold (above)
+     stays reserved for small editorial detail (eyebrows, numbered indices) and
+     is never blended into the same gradient as violet — one consistent hue
+     reads calmer than a multi-color mix. */
+  --color-violet: #7c5cff;
+  --color-violet-dim: #6244d9;
+  --color-violet-tint: #efecff;
+  --color-violet-dark: #3d2b96;
+
+  /* Neutrals */
+  --color-ink: #100f12;
+  --color-ink-soft: #1a1820;
+  --color-body: #4b4750;
+  --color-muted: #79747f;
+  --color-bg: #fffdfc;
+  --color-bg-alt: #faf6f4;
+  --color-surface: #ffffff;
+  --color-border: #ece6e3;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(23 21 26 / 0.05), 0 1px 3px -1px rgb(23 21 26 / 0.06);
+  --shadow-md: 0 4px 12px -2px rgb(23 21 26 / 0.08), 0 2px 6px -2px rgb(23 21 26 / 0.05);
+  --shadow-lg: 0 20px 40px -12px rgb(23 21 26 / 0.16);
+  --shadow-brand: 0 12px 28px -8px rgb(138 3 3 / 0.35);
+  --shadow-glow: 0 0 60px -8px rgb(138 3 3 / 0.55);
+  --shadow-glow-gold: 0 0 50px -10px rgb(179 137 63 / 0.5);
+  --shadow-glow-electric: 0 0 50px -6px rgb(13 217 198 / 0.6);
+  --shadow-glow-violet: 0 0 50px -8px rgb(124 92 255 / 0.55);
+}
+
+/* Fonts injected by next/font live on the <html> element as --font-space-grotesk /
+   --font-inter; alias them to semantic theme tokens here. */
+@theme inline {
+  --font-heading: var(--font-space-grotesk), "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base element defaults live in Tailwind's "base" layer so utility classes
+   (which live in the "utilities" layer) always win when applied — without
+   this, a plain unlayered rule like `a { color: inherit }` would beat every
+   text-color utility on links regardless of specificity. */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+    background: var(--color-bg);
+    color: var(--color-body);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-ink);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-violet-dim);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-violet-dark);
+    color: white;
+  }
+}
+
+/* The native date input still uses the browser's own calendar picker (just a
+   dropdown, not an OS scroll-wheel) so restyling its small icon glyph is
+   enough here. The time input's picker was a full native scroll-wheel widget
+   that CSS can't reach past the icon — that one got replaced outright with
+   TimePicker.tsx instead of styled around. */
+input[type="date"] {
+  color-scheme: light;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 6px;
+  margin-right: -4px;
+  border-radius: 9999px;
+  filter: invert(29%) sepia(95%) saturate(2230%) hue-rotate(246deg) brightness(98%) contrast(101%);
+  transition: background-color 0.2s ease;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background-color: rgb(124 92 255 / 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scroll-reveal: visible by default (no JS / not-yet-mounted), Reveal.tsx
+   switches to "hidden then reveal on intersection" only after confirming JS runs. */
+[data-reveal] {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal="false"][data-reveal-dir="up"] {
+  transform: translateY(24px);
+}
+[data-reveal="false"][data-reveal-dir="left"] {
+  transform: translateX(-28px);
+}
+[data-reveal="false"][data-reveal-dir="right"] {
+  transform: translateX(28px);
+}
+[data-reveal="false"][data-reveal-dir="scale"] {
+  transform: scale(0.94);
+}
+[data-reveal="true"] {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* On-load entrance for above-the-fold content (Hero, PageHeader) that scroll-reveal
+   doesn't reach since it's visible immediately without any scrolling. */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.animate-fade-in-up-1 {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+.animate-fade-in-up-2 {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+.animate-fade-in-up-3 {
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+/* Continuous marquee ticker */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* Slow-drifting gradient mesh blobs for dark "futuristic" sections */
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6%, 8%) scale(1.15); }
+}
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8%, -6%) scale(1.1); }
+}
+.animate-drift-1 {
+  animation: drift-1 16s ease-in-out infinite;
+}
+.animate-drift-2 {
+  animation: drift-2 20s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift-1,
+  .animate-drift-2 {
+    animation: none;
+  }
+}
+
+/* Glass panel */
+.glass {
+  background: rgb(255 255 255 / 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgb(255 255 255 / 0.12);
+}
+.glass-light {
+  background: rgb(255 255 255 / 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgb(255 255 255 / 0.5);
+}
+/* Solid-dark badge backing for overlays on top of photos — unlike .glass, this
+   stays legible no matter how bright or busy the image behind it is. */
+.glass-dark {
+  background: rgb(16 15 18 / 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgb(255 255 255 / 0.14);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Gentle bob for floating badges/popups */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float-slow {
+  animation: float-slow 4.5s ease-in-out infinite;
+}
+
+/* Button sheen sweep on hover — a clean, symmetrical parallelogram band (flat
+   center, even falloff on both edges) rather than a single lopsided highlight,
+   so it reads as a deliberate sweep rather than a stray glare. */
+@keyframes sheen {
+  from { transform: translateX(-160%) skewX(-20deg); }
+  to { transform: translateX(220%) skewX(-20deg); }
+}
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 26%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgb(255 255 255 / 0.32) 42%,
+    rgb(255 255 255 / 0.32) 58%,
+    transparent 100%
+  );
+  transform: translateX(-160%) skewX(-20deg);
+  pointer-events: none;
+}
+.btn-sheen:hover::after {
+  animation: sheen 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Slow ambient rotation, used behind icon badges for a "live" feel */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-slow,
+  .animate-float-slow,
+  .animate-spin-slow,
+  .btn-sheen::after {
+    animation: none;
+  }
+}
