@@ -76,7 +76,9 @@ export default function ArticleTemplate({ article }: { article: Article }) {
       <section className="relative overflow-hidden bg-ink py-14">
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-gold/10 blur-[100px]" />
         <Container className="relative">
-          <h2 className="font-heading text-xl font-semibold text-white">More Resources</h2>
+          <Reveal as="h2" className="font-heading text-xl font-semibold text-white">
+            More Resources
+          </Reveal>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
             {more.map((a, i) => (
               <Reveal key={a.slug} delay={i * 140}>

@@ -26,11 +26,13 @@ export default function ServicesPage() {
       <section className="relative overflow-hidden py-24 sm:py-28">
         <Container>
           <div className="grid gap-10 md:grid-cols-3 md:items-center">
-            <Reveal dir="left" className="md:col-span-2">
-              <h2 className="font-heading text-2xl font-semibold text-ink">We specialize in</h2>
+            <div className="md:col-span-2">
+              <Reveal as="h2" dir="left" className="font-heading text-2xl font-semibold text-ink">
+                We specialize in
+              </Reveal>
               <ul className="mt-6 grid list-none grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
                 {services.map((service, i) => (
-                  <Reveal key={service.slug} as="li" delay={280 + i * 60}>
+                  <Reveal key={service.slug} as="li" dir="left" delay={200 + i * 90}>
                     <a
                       href={`#${service.anchor}`}
                       className="flex items-center gap-2.5 text-body transition-colors hover:translate-x-1 hover:text-violet-dark"
@@ -54,7 +56,7 @@ export default function ServicesPage() {
                   </span>
                 </li>
               </ul>
-            </Reveal>
+            </div>
             <Reveal dir="right" delay={250} className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-lg">
               <div className="relative h-64 overflow-hidden rounded-[1.5rem] md:h-80">
                 <Image
@@ -132,22 +134,20 @@ export default function ServicesPage() {
 
       <section className="py-24 text-center sm:py-28">
         <Container>
-          <Reveal dir="scale">
-            <h2 className="font-heading text-2xl font-semibold text-ink sm:text-3xl">
-              Not sure which service is right for you?
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-body">
-              Call us and our team will help point you in the right direction.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <LinkButton href={primaryPhone.href}>
-                <Icon name="phone" size={16} />
-                Call {primaryPhone.number}
-              </LinkButton>
-              <LinkButton href="/appointment" variant="outline">
-                Request an Appointment
-              </LinkButton>
-            </div>
+          <Reveal as="h2" dir="scale" className="font-heading text-2xl font-semibold text-ink sm:text-3xl">
+            Not sure which service is right for you?
+          </Reveal>
+          <Reveal as="p" delay={200} className="mx-auto mt-3 max-w-xl text-body">
+            Call us and our team will help point you in the right direction.
+          </Reveal>
+          <Reveal delay={350} className="mt-8 flex flex-wrap justify-center gap-4">
+            <LinkButton href={primaryPhone.href}>
+              <Icon name="phone" size={16} />
+              Call {primaryPhone.number}
+            </LinkButton>
+            <LinkButton href="/appointment" variant="outline">
+              Request an Appointment
+            </LinkButton>
           </Reveal>
         </Container>
       </section>

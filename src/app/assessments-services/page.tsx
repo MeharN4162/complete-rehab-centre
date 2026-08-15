@@ -30,14 +30,18 @@ export default function AssessmentsPage() {
 
           <Reveal dir="scale" className="relative mt-14 overflow-hidden rounded-3xl bg-bg-alt px-8 py-12 text-center">
             <div aria-hidden className="animate-float-slow pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-violet-tint blur-3xl" />
-            <h2 className="relative font-heading text-xl font-semibold text-ink">Have questions about an assessment?</h2>
-            <p className="relative mt-2 text-body">Call us and our team can help determine which assessment is right for you.</p>
-            <div className="relative mt-6">
+            <Reveal as="h2" className="relative font-heading text-xl font-semibold text-ink">
+              Have questions about an assessment?
+            </Reveal>
+            <Reveal as="p" delay={150} className="relative mt-2 text-body">
+              Call us and our team can help determine which assessment is right for you.
+            </Reveal>
+            <Reveal delay={280} className="relative mt-6">
               <LinkButton href={primaryPhone.href}>
                 <Icon name="phone" size={16} />
                 Call {primaryPhone.number}
               </LinkButton>
-            </div>
+            </Reveal>
           </Reveal>
         </Container>
       </section>

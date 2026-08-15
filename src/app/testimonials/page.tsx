@@ -36,13 +36,15 @@ export default function TestimonialsPage() {
 
           <Reveal className="relative mt-16 overflow-hidden rounded-3xl bg-ink px-8 py-12 text-center">
             <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-violet/25 blur-[100px]" />
-            <h2 className="relative font-heading text-xl font-semibold text-white sm:text-2xl">
+            <Reveal as="h2" dir="scale" className="relative font-heading text-xl font-semibold text-white sm:text-2xl">
               Had a great experience with us?
-            </h2>
-            <p className="relative mt-2 text-white/70">We&apos;d love to hear about it — get in touch to share your story.</p>
-            <div className="relative mt-6">
+            </Reveal>
+            <Reveal as="p" delay={150} className="relative mt-2 text-white/70">
+              We&apos;d love to hear about it — get in touch to share your story.
+            </Reveal>
+            <Reveal delay={280} className="relative mt-6">
               <LinkButton href="/contact-us">Contact Us</LinkButton>
-            </div>
+            </Reveal>
           </Reveal>
         </Container>
       </section>
