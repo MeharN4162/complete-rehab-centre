@@ -6,6 +6,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import PageHeader from "@/components/shared/PageHeader";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Staff",
@@ -48,7 +49,7 @@ export default function StaffPage() {
           <div className="mt-12 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {treatingPractitioners.map((member, i) => (
               <Reveal key={member.name} delay={i * 160} dir={i % 2 === 0 ? "left" : "right"} className="h-full">
-                <div className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet/40 hover:shadow-glow-violet">
+                <SpotlightCard className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-violet/40 hover:shadow-glow-violet">
                   <div className="relative flex items-center justify-between">
                     <span className="btn-sheen flex h-11 w-11 items-center justify-center rounded-full bg-white/5 text-violet ring-1 ring-white/10 transition-all duration-300 group-hover:bg-violet group-hover:text-ink group-hover:ring-violet">
                       <Icon name="users" size={18} />
@@ -57,7 +58,7 @@ export default function StaffPage() {
                   </div>
                   <h3 className="relative mt-4 font-heading text-lg font-semibold text-white">{member.name}</h3>
                   <p className="relative mt-1.5 text-sm leading-relaxed text-white/60">{member.title}</p>
-                </div>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>

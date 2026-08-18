@@ -18,12 +18,12 @@ export const siteConfig = {
     { label: "Secondary", number: "(905) 789-7065", href: "tel:+19057897065" },
   ],
   hours: [
-    { day: "Monday", time: "9 AM–7:30 PM" },
-    { day: "Tuesday", time: "9 AM–7 PM" },
-    { day: "Wednesday", time: "9 AM–7:30 PM" },
-    { day: "Thursday", time: "9 AM–6 PM" },
+    { day: "Monday", time: "9 AM–8 PM" },
+    { day: "Tuesday", time: "9 AM–8 PM" },
+    { day: "Wednesday", time: "9 AM–7 PM" },
+    { day: "Thursday", time: "9 AM–8 PM" },
     { day: "Friday", time: "9 AM–6 PM" },
-    { day: "Saturday", time: "9:30 AM–2 PM" },
+    { day: "Saturday", time: "9 AM–3 PM" },
   ],
   hoursClosed: "Sunday",
   mapEmbedSrc:

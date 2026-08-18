@@ -6,6 +6,7 @@ import Container from "@/components/ui/Container";
 import PageHeader from "@/components/shared/PageHeader";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -24,7 +25,10 @@ export default function ResourcesPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((article, i) => (
               <Reveal key={article.slug} delay={i * 140} dir={i % 3 === 0 ? "left" : i % 3 === 2 ? "right" : "up"}>
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.6rem] bg-white shadow-sm ring-1 ring-border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-violet hover:ring-violet/30">
+                <SpotlightCard
+                  as="article"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[1.6rem] bg-white shadow-sm ring-1 ring-border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-glow-violet hover:ring-violet/30"
+                >
                   <Link href={`/resources/${article.slug}`} className="relative h-44 w-full overflow-hidden">
                     <Image
                       src={article.image}
@@ -54,7 +58,7 @@ export default function ResourcesPage() {
                     </Link>
                   </div>
                   <span className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-violet transition-transform duration-500 group-hover:scale-x-100" />
-                </article>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>

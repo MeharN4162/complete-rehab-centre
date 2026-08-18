@@ -20,6 +20,8 @@ const paths = {
   sparkle: "M12 2l1.8 5.6L19.4 9.4 13.8 11.2 12 16.8 10.2 11.2 4.6 9.4 10.2 7.6z",
   quote: "M9.5 7C6.5 8.5 5 11 5 14c0 2.2 1.5 3.5 3.2 3.5 1.7 0 3-1.3 3-3 0-1.6-1.1-2.8-2.6-3 .3-1.5 1.5-3 3.4-3.8L9.5 7zm9 0C15.5 8.5 14 11 14 14c0 2.2 1.5 3.5 3.2 3.5 1.7 0 3-1.3 3-3 0-1.6-1.1-2.8-2.6-3 .3-1.5 1.5-3 3.4-3.8L18.5 7z",
   external: "M14 5h5v5M19 5l-9 9M6 5H5v14h14v-1",
+  user: "M12 12a4 4 0 100-8 4 4 0 000 8zM4 21c0-4.4 3.6-8 8-8s8 3.6 8 8",
+  mail: "M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1zM3.5 6l8.5 6.5L20.5 6",
 } as const;
 
 export type IconName = keyof typeof paths;
@@ -39,6 +41,8 @@ export default function Icon({ name, size = 20, strokeWidth = 2, className = "",
     "check",
     "activity",
     "external",
+    "user",
+    "mail",
   ];
   const isStroke = strokeIcons.includes(name);
 

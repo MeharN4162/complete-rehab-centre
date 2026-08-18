@@ -6,7 +6,7 @@ import Icon from "@/components/ui/Icon";
 import TimePicker from "@/components/shared/TimePicker";
 
 const inputClasses =
-  "w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-ink outline-none transition-colors focus:border-violet focus:ring-4 focus:ring-violet-tint";
+  "w-full rounded-xl border border-border bg-white py-3 pl-11 pr-4 text-sm text-ink outline-none transition-colors focus:border-violet focus:ring-4 focus:ring-violet-tint";
 
 export default function AppointmentForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -57,7 +57,10 @@ export default function AppointmentForm() {
         <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-ink">
           Name
         </label>
-        <input id="name" name="name" type="text" required className={inputClasses} />
+        <div className="relative">
+          <Icon name="user" size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" />
+          <input id="name" name="name" type="text" required className={inputClasses} />
+        </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
@@ -65,13 +68,19 @@ export default function AppointmentForm() {
           <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-ink">
             Phone
           </label>
-          <input id="phone" name="phone" type="tel" required className={inputClasses} />
+          <div className="relative">
+            <Icon name="phone" size={15} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" />
+            <input id="phone" name="phone" type="tel" required className={inputClasses} />
+          </div>
         </div>
         <div>
           <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-ink">
             Email
           </label>
-          <input id="email" name="email" type="email" required className={inputClasses} />
+          <div className="relative">
+            <Icon name="mail" size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" />
+            <input id="email" name="email" type="email" required className={inputClasses} />
+          </div>
         </div>
       </div>
 
@@ -80,7 +89,10 @@ export default function AppointmentForm() {
           <label htmlFor="date" className="mb-1.5 block text-sm font-medium text-ink">
             Preferred Date
           </label>
-          <input id="date" name="date" type="date" required className={inputClasses} />
+          <div className="relative">
+            <Icon name="calendar" size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" />
+            <input id="date" name="date" type="date" required className={inputClasses} />
+          </div>
         </div>
         <div>
           <label htmlFor="time" className="mb-1.5 block text-sm font-medium text-ink">

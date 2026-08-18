@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig, structuredHours } from "@/data/site";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollProgressBar from "@/components/layout/ScrollProgressBar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to main content
         </a>
+        <ScrollProgressBar />
         <Header />
         <main id="main-content" className="flex-1">
           {children}

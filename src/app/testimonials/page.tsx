@@ -5,6 +5,7 @@ import PageHeader from "@/components/shared/PageHeader";
 import { LinkButton } from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -23,13 +24,16 @@ export default function TestimonialsPage() {
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={i * 140} dir={i % 2 === 0 ? "left" : "right"}>
-                <figure className="group flex h-full flex-col rounded-3xl bg-white p-8 shadow-sm ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-violet">
+                <SpotlightCard
+                  as="figure"
+                  className="group flex h-full flex-col rounded-3xl bg-white p-8 shadow-sm ring-1 ring-border transition-all duration-300 hover:-translate-y-1 hover:shadow-glow-violet"
+                >
                   <span className="btn-sheen flex h-11 w-11 items-center justify-center rounded-full bg-violet-tint text-violet-dark transition-all duration-300 group-hover:bg-violet group-hover:text-white">
                     <Icon name="quote" size={20} />
                   </span>
                   <blockquote className="mt-5 flex-1 leading-relaxed text-body">{t.quote}</blockquote>
                   <figcaption className="mt-5 font-heading font-semibold text-ink">{t.name}</figcaption>
-                </figure>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>
