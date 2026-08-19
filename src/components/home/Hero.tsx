@@ -9,6 +9,7 @@ import { treatingPractitioners } from "@/data/staff";
 import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
+import ConstellationDots from "@/components/ui/ConstellationDots";
 
 const tickerItems = [
   "Multidisciplinary Care Team",
@@ -51,6 +52,7 @@ export default function Hero() {
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -bottom-40 right-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]"
       />
+      <ConstellationDots />
       <Container className="relative grid gap-0 py-10 sm:py-14 lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-16">
         {/* Text panel */}
         <div className="order-2 lg:order-1">
@@ -88,13 +90,6 @@ export default function Hero() {
             >
               <Icon name="chevronLeft" size={15} />
             </button>
-            <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/20" aria-hidden>
-              <div
-                key={active}
-                className="animate-slide-progress h-full bg-violet"
-                style={{ animationDuration: `${AUTO_ADVANCE_MS}ms` }}
-              />
-            </div>
             <button
               type="button"
               onClick={() => goTo(active + 1)}
@@ -124,6 +119,13 @@ export default function Hero() {
               ))}
               <div key={active} aria-hidden className="sheen-once" />
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+              <div className="absolute inset-x-4 bottom-4 z-20 h-1.5 overflow-hidden rounded-full bg-white/25" aria-hidden>
+                <div
+                  key={active}
+                  className="animate-slide-progress h-full bg-white"
+                  style={{ animationDuration: `${AUTO_ADVANCE_MS}ms` }}
+                />
+              </div>
             </div>
           </div>
         </div>

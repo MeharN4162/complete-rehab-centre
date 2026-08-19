@@ -2,6 +2,7 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Icon, { IconName } from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
+import DustMotes from "@/components/ui/DustMotes";
 
 const steps: { icon: IconName; title: string; description: string }[] = [
   {
@@ -30,6 +31,7 @@ export default function PatientJourney() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
       <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-transparent via-border to-transparent" />
+      <DustMotes count={8} />
       <Container>
         <SectionHeading eyebrow="How it works" title="Your path to recovery" align="left" />
 

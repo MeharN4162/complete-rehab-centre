@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
+import ConstellationDots from "@/components/ui/ConstellationDots";
 
 function FooterLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -25,6 +26,7 @@ export default function Footer() {
         aria-hidden
         className="pointer-events-none absolute bottom-0 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-violet/12 blur-[120px]"
       />
+      <ConstellationDots count={24} />
       <div className="relative border-b border-white/10">
         <Container>
           <Reveal className="flex flex-col items-center gap-8 py-16 text-center sm:flex-row sm:justify-between sm:py-20 sm:text-left">
