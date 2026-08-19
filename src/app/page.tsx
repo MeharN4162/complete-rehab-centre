@@ -45,7 +45,6 @@ export default function HomePage() {
 
       <section className="relative overflow-hidden pb-24 sm:pb-32">
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-96 w-[36rem] -translate-x-1/2 rounded-full bg-violet-tint/70 blur-3xl" />
-        <RotatingGlyphs tone="light" />
         <Container className="relative">
           <div className="relative overflow-hidden rounded-3xl bg-bg-alt shadow-sm ring-1 ring-border">
             <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold-tint blur-3xl" />

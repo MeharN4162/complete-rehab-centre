@@ -5,7 +5,6 @@ import PageHeader from "@/components/shared/PageHeader";
 import AppointmentForm from "@/components/shared/AppointmentForm";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -21,7 +20,6 @@ export default function ContactUsPage() {
       <section className="relative overflow-hidden py-24 sm:py-32">
         <div aria-hidden className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-violet-tint blur-3xl" />
         <div aria-hidden className="pointer-events-none absolute -right-40 bottom-20 h-80 w-80 rounded-full bg-gold-tint blur-3xl" />
-        <RotatingGlyphs tone="light" />
         <Container className="relative">
           <div className="grid gap-8 lg:grid-cols-5">
             <Reveal dir="left" className="relative overflow-hidden rounded-3xl bg-bg-alt p-6 shadow-sm ring-1 ring-border sm:p-10 lg:col-span-3">

@@ -26,7 +26,6 @@ export default function ServicesPage() {
       />
 
       <section className="relative overflow-hidden py-24 sm:py-28">
-        <RotatingGlyphs tone="light" />
         <Container>
           <div className="group grid gap-10 md:grid-cols-3 md:items-center">
             <div className="md:col-span-2">
@@ -139,7 +138,6 @@ export default function ServicesPage() {
       </section>
 
       <section className="relative overflow-hidden py-24 text-center sm:py-28">
-        <RotatingGlyphs tone="light" />
         <Container>
           <Reveal as="h2" dir="scale" className="font-heading text-2xl font-semibold text-ink sm:text-3xl">
             Not sure which service is right for you?

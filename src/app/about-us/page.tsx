@@ -20,7 +20,6 @@ export default function AboutUsPage() {
       <PageHeader title="About Us" subtitle="A multidisciplinary rehabilitation facility built around your recovery." />
 
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <RotatingGlyphs tone="light" />
         <Container narrow>
           <Reveal>
             <p className="text-center text-lg leading-relaxed text-body">{aboutContent.intro}</p>
@@ -69,7 +68,6 @@ export default function AboutUsPage() {
 
       <section className="relative overflow-hidden py-24 sm:py-32">
         <div aria-hidden className="animate-float-slow pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-tint/60 blur-3xl" />
-        <RotatingGlyphs tone="light" />
         <Container narrow className="relative">
           <SectionHeading eyebrow="Our promise" title="Our Vision" subtitle={aboutContent.vision} />
         </Container>

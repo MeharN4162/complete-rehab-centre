@@ -21,7 +21,6 @@ export default function TestimonialsPage() {
       <section className="relative overflow-hidden py-24 sm:py-32">
         <div aria-hidden className="pointer-events-none absolute -right-40 top-40 h-96 w-96 rounded-full bg-violet-tint blur-3xl" />
         <div aria-hidden className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-tint blur-3xl" />
-        <RotatingGlyphs tone="light" />
         <Container className="relative">
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((t, i) => (

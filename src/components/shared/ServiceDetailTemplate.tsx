@@ -6,7 +6,6 @@ import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
 import { primaryPhone } from "@/data/site";
 import Reveal from "@/components/ui/Reveal";
-import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export default function ServiceDetailTemplate({ service }: { service: Service }) {
   return (
@@ -14,7 +13,6 @@ export default function ServiceDetailTemplate({ service }: { service: Service })
       <PageHeader title={service.name} subtitle={service.shortDescription} />
 
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <RotatingGlyphs tone="light" />
         <Container>
           <div className="group grid items-start gap-10 lg:grid-cols-2">
             <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl">

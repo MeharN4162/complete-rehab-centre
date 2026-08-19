@@ -29,7 +29,6 @@ export default function ArticleTemplate({ article }: { article: Article }) {
       </section>
 
       <article className="relative overflow-hidden py-14 sm:py-20">
-        <RotatingGlyphs tone="light" />
         <Container narrow>
           <Reveal className="relative mb-10 rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl">
             <div className="img-sheen relative h-64 w-full overflow-hidden rounded-[1.5rem] sm:h-80">
