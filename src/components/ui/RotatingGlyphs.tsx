@@ -16,9 +16,11 @@ function round(n: number, decimals = 2) {
 
 // One consistent color for every glyph, dark sections only — the light
 // variant existed but was removed, kept here only so the prop doesn't need
-// touching everywhere if it comes back.
+// touching everywhere if it comes back. Low opacity is load-bearing at this
+// density (~230 glyphs per section): anything much brighter competes with
+// the foreground content instead of reading as background texture.
 const tones = {
-  dark: "rgb(124 92 255 / 0.4)",
+  dark: "rgb(124 92 255 / 0.12)",
   light: "rgb(124 92 255 / 0.16)",
 };
 

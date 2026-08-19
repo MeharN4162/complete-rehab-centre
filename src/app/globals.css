@@ -504,14 +504,14 @@
   top: 50%;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 1.5px;
   transform: translateY(-50%);
 }
 .cross-glyph::after {
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 2px;
+  width: 1.5px;
   transform: translateX(-50%);
 }
 @keyframes cross-rotate {
