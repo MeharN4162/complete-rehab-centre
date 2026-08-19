@@ -39,7 +39,14 @@ export default function RotatingGlyphs({ cols = 26, rows = 9, className = "", to
     const left = round(((col + 0.5) / cols) * 100);
     const top = round(((row + 0.5) / rows) * 100);
     const delay = round((col / cols) * CYCLE, 3);
-    return { left, top, delay };
+    // This many columns/rows is sized for a full-width desktop section —
+    // packed into a ~380px phone screen it reads as visual noise instead of
+    // texture. Keeping only every other column and row below the `sm`
+    // breakpoint (a plain server-rendered responsive class, no JS/viewport
+    // check needed) cuts mobile density to a quarter without touching the
+    // desktop grid at all.
+    const mobileHidden = col % 2 !== 0 || row % 2 !== 0;
+    return { left, top, delay, mobileHidden };
   });
 
   return (
@@ -47,7 +54,7 @@ export default function RotatingGlyphs({ cols = 26, rows = 9, className = "", to
       {glyphs.map((g, i) => (
         <span
           key={i}
-          className="cross-glyph animate-cross-rotate absolute h-3 w-3"
+          className={`cross-glyph animate-cross-rotate absolute h-3 w-3 ${g.mobileHidden ? "hidden sm:block" : ""}`}
           style={{
             top: `${g.top}%`,
             left: `${g.left}%`,
