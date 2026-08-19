@@ -1,5 +1,4 @@
 import Container from "@/components/ui/Container";
-import ConstellationDots from "@/components/ui/ConstellationDots";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 type PageHeaderProps = {
@@ -19,7 +18,6 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-gold/20 blur-[100px]"
       />
-      <ConstellationDots />
       <RotatingGlyphs tone="dark" />
       <Container className="relative">
         <span className="animate-fade-in-up flex items-center gap-2.5">

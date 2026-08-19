@@ -6,7 +6,6 @@ import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
-import DustMotes from "@/components/ui/DustMotes";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export default function ResourcesPreview() {
@@ -14,7 +13,6 @@ export default function ResourcesPreview() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32">
       <div aria-hidden className="pointer-events-none absolute -left-32 top-1/3 h-80 w-80 rounded-full bg-gold-tint blur-3xl" />
-      <DustMotes />
       <RotatingGlyphs tone="light" />
       <Container className="relative">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">

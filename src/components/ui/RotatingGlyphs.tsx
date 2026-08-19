@@ -1,17 +1,14 @@
 type RotatingGlyphsProps = {
-  count?: number;
+  cols?: number;
+  rows?: number;
   className?: string;
   tone?: "dark" | "light";
 };
 
-// Same seeded pseudo-random + rounding approach as ConstellationDots/DustMotes
-// — deterministic placement, rounded before going into inline styles so the
-// browser's own style-attribute reserialization can't cause a hydration
-// mismatch (see the longer comment in ConstellationDots.tsx).
-function seeded(seed: number) {
-  const x = Math.sin(seed * 12.9898) * 43758.5453;
-  return x - Math.floor(x);
-}
+// Browsers reserialize an inline `style` attribute's numeric values when
+// parsing server-rendered HTML, rounding more aggressively than JS's own
+// float-to-string conversion — left unrounded, that mismatch trips a
+// hydration warning (see the equivalent note this replaced elsewhere).
 function round(n: number, decimals = 2) {
   const f = 10 ** decimals;
   return Math.round(n * f) / f;
@@ -22,19 +19,27 @@ const tones = {
   light: { violet: "rgb(124 92 255 / 0.16)", gold: "rgb(201 161 90 / 0.16)" },
 };
 
-// A sparse, deliberate scatter of small "+" glyphs that slowly rotate into
-// an "×" and back — a fixed, readable pattern rather than the constellation
-// dots' randomized twinkle, for sections that want that steadier motif.
-export default function RotatingGlyphs({ count = 9, className = "", tone = "dark" }: RotatingGlyphsProps) {
+const COL_STAGGER = 0.14; // seconds between each column starting its rotation
+const ROW_STAGGER = 0.3; // small offset per row so rows don't all fire in lockstep
+const CYCLE = 3.2; // seconds for one full +  ->  ×  ->  + rotation
+
+// A fixed grid of small "+" glyphs, evenly spaced left to right, that
+// rotate into an "×" and settle back — deliberately patterned (not
+// randomized) with each column starting a beat after the one before it, so
+// the rotation reads as a single wave sweeping smoothly across the section.
+export default function RotatingGlyphs({ cols = 8, rows = 3, className = "", tone = "dark" }: RotatingGlyphsProps) {
   const colors = tones[tone];
-  const glyphs = Array.from({ length: count }, (_, i) => {
-    const top = round(seeded(i * 2.9 + 21) * 100);
-    const left = round(seeded(i * 4.1 + 23) * 100);
-    const size = round(11 + seeded(i * 6.7 + 25) * 11);
-    const duration = round(6 + seeded(i * 3.3 + 27) * 6, 1);
-    const delay = round(seeded(i * 5.1 + 29) * -10, 1);
-    const isGold = i % 3 === 0;
-    return { top, left, size, duration, delay, isGold };
+  const glyphs = Array.from({ length: cols * rows }, (_, i) => {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    const left = round(((col + 0.5) / cols) * 100);
+    const top = round(((row + 0.5) / rows) * 100);
+    // Positive delay, increasing with column index, so later (rightward)
+    // columns start their rotation later than earlier (leftward) ones —
+    // that lag is what reads as the wave traveling left to right over time.
+    const delay = round(col * COL_STAGGER + row * ROW_STAGGER, 2);
+    const isGold = (col + row) % 4 === 0;
+    return { left, top, delay, isGold };
   });
 
   return (
@@ -42,14 +47,12 @@ export default function RotatingGlyphs({ count = 9, className = "", tone = "dark
       {glyphs.map((g, i) => (
         <span
           key={i}
-          className="cross-glyph animate-cross-rotate absolute"
+          className="cross-glyph animate-cross-rotate absolute h-3.5 w-3.5"
           style={{
             top: `${g.top}%`,
             left: `${g.left}%`,
-            width: `${g.size}px`,
-            height: `${g.size}px`,
             color: g.isGold ? colors.gold : colors.violet,
-            animationDuration: `${g.duration}s`,
+            animationDuration: `${CYCLE}s`,
             animationDelay: `${g.delay}s`,
           }}
         />

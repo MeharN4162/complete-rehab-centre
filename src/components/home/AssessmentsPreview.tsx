@@ -5,7 +5,6 @@ import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
-import DustMotes from "@/components/ui/DustMotes";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export default function AssessmentsPreview() {
@@ -13,7 +12,6 @@ export default function AssessmentsPreview() {
     <section className="relative overflow-hidden bg-bg-alt py-24 sm:py-32">
       <div aria-hidden className="pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-violet-tint blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-gold-tint blur-3xl" />
-      <DustMotes />
       <RotatingGlyphs tone="light" />
       <Container className="relative">
         <SectionHeading eyebrow="Diagnostics" title="Medical assessments" />

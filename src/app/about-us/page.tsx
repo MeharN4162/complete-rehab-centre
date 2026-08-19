@@ -6,8 +6,6 @@ import PageHeader from "@/components/shared/PageHeader";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import ConstellationDots from "@/components/ui/ConstellationDots";
-import DustMotes from "@/components/ui/DustMotes";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export const metadata: Metadata = {
@@ -22,7 +20,6 @@ export default function AboutUsPage() {
       <PageHeader title="About Us" subtitle="A multidisciplinary rehabilitation facility built around your recovery." />
 
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <DustMotes count={8} />
         <RotatingGlyphs tone="light" />
         <Container narrow>
           <Reveal>
@@ -34,7 +31,6 @@ export default function AboutUsPage() {
       <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-violet/20 blur-[120px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]" />
-        <ConstellationDots />
         <RotatingGlyphs tone="dark" />
         <Container className="relative">
           <div className="group grid items-center gap-10 md:grid-cols-2">
@@ -73,7 +69,6 @@ export default function AboutUsPage() {
 
       <section className="relative overflow-hidden py-24 sm:py-32">
         <div aria-hidden className="animate-float-slow pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-tint/60 blur-3xl" />
-        <DustMotes count={8} />
         <RotatingGlyphs tone="light" />
         <Container narrow className="relative">
           <SectionHeading eyebrow="Our promise" title="Our Vision" subtitle={aboutContent.vision} />

@@ -6,7 +6,6 @@ import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
 import { primaryPhone } from "@/data/site";
 import Reveal from "@/components/ui/Reveal";
-import DustMotes from "@/components/ui/DustMotes";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export default function ServiceDetailTemplate({ service }: { service: Service }) {
@@ -15,7 +14,6 @@ export default function ServiceDetailTemplate({ service }: { service: Service })
       <PageHeader title={service.name} subtitle={service.shortDescription} />
 
       <section className="relative overflow-hidden py-24 sm:py-32">
-        <DustMotes count={8} />
         <RotatingGlyphs tone="light" />
         <Container>
           <div className="group grid items-start gap-10 lg:grid-cols-2">

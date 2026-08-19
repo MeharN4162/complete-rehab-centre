@@ -6,8 +6,6 @@ import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
 import { primaryPhone } from "@/data/site";
 import Reveal from "@/components/ui/Reveal";
-import ConstellationDots from "@/components/ui/ConstellationDots";
-import DustMotes from "@/components/ui/DustMotes";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export default function ArticleTemplate({ article }: { article: Article }) {
@@ -17,7 +15,6 @@ export default function ArticleTemplate({ article }: { article: Article }) {
     <>
       <section className="relative overflow-hidden bg-ink py-14">
         <div aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-violet/25 blur-3xl" />
-        <ConstellationDots count={12} />
         <RotatingGlyphs tone="dark" />
         <Container narrow className="relative">
           <Link
@@ -32,7 +29,6 @@ export default function ArticleTemplate({ article }: { article: Article }) {
       </section>
 
       <article className="relative overflow-hidden py-14 sm:py-20">
-        <DustMotes count={8} />
         <RotatingGlyphs tone="light" />
         <Container narrow>
           <Reveal className="relative mb-10 rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl">
@@ -82,7 +78,6 @@ export default function ArticleTemplate({ article }: { article: Article }) {
 
       <section className="relative overflow-hidden bg-ink py-14">
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-gold/10 blur-[100px]" />
-        <ConstellationDots count={12} />
         <RotatingGlyphs tone="dark" />
         <Container className="relative">
           <Reveal as="h2" className="font-heading text-xl font-semibold text-white">

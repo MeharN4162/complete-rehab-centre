@@ -5,7 +5,6 @@ import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
-import ConstellationDots from "@/components/ui/ConstellationDots";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 function FooterLabel({ children }: { children: React.ReactNode }) {
@@ -27,7 +26,6 @@ export default function Footer() {
         aria-hidden
         className="pointer-events-none absolute bottom-0 left-1/2 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-violet/12 blur-[120px]"
       />
-      <ConstellationDots count={24} />
       <RotatingGlyphs tone="dark" />
       <div className="relative border-b border-white/10">
         <Container>

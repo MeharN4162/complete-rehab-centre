@@ -6,7 +6,6 @@ import PageHeader from "@/components/shared/PageHeader";
 import AppointmentForm from "@/components/shared/AppointmentForm";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
-import DustMotes from "@/components/ui/DustMotes";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function AppointmentPage() {
 
       <section className="relative overflow-hidden py-24 sm:py-32">
         <div aria-hidden className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-violet-tint blur-3xl" />
-        <DustMotes />
         <RotatingGlyphs tone="light" />
         <Container className="relative">
           <div className="grid gap-8 lg:grid-cols-5">

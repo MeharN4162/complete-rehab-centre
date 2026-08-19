@@ -8,8 +8,6 @@ import { LinkButton } from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import WaveDivider from "@/components/ui/WaveDivider";
-import ConstellationDots from "@/components/ui/ConstellationDots";
-import DustMotes from "@/components/ui/DustMotes";
 import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 import { primaryPhone } from "@/data/site";
 
@@ -28,7 +26,6 @@ export default function ServicesPage() {
       />
 
       <section className="relative overflow-hidden py-24 sm:py-28">
-        <DustMotes />
         <RotatingGlyphs tone="light" />
         <Container>
           <div className="group grid gap-10 md:grid-cols-3 md:items-center">
@@ -82,7 +79,6 @@ export default function ServicesPage() {
       <section className="grain relative overflow-hidden bg-ink py-24 sm:py-28">
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-40 top-40 h-96 w-96 rounded-full bg-violet/15 blur-[130px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-40 h-96 w-96 rounded-full bg-gold/10 blur-[130px]" />
-        <ConstellationDots />
         <RotatingGlyphs tone="dark" />
         <Container className="relative space-y-16 sm:space-y-20">
           {services.map((service, index) => (
@@ -143,7 +139,6 @@ export default function ServicesPage() {
       </section>
 
       <section className="relative overflow-hidden py-24 text-center sm:py-28">
-        <DustMotes count={8} />
         <RotatingGlyphs tone="light" />
         <Container>
           <Reveal as="h2" dir="scale" className="font-heading text-2xl font-semibold text-ink sm:text-3xl">
