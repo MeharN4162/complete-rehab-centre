@@ -27,8 +27,7 @@ export default function ResourcesPage() {
               <Reveal key={article.slug} delay={i * 140} dir={i % 3 === 0 ? "left" : i % 3 === 2 ? "right" : "up"}>
                 <SpotlightCard
                   as="article"
-                  tilt
-                  className="group relative flex h-full flex-col overflow-hidden rounded-[1.6rem] bg-white shadow-sm ring-1 ring-border hover:shadow-glow-violet hover:ring-violet/30"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[1.6rem] bg-white shadow-sm ring-1 ring-border transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-glow-violet hover:ring-violet/30"
                 >
                   <Link href={`/resources/${article.slug}`} className="relative h-44 w-full overflow-hidden">
                     <Image

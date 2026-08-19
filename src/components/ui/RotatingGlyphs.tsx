@@ -20,7 +20,7 @@ function round(n: number, decimals = 2) {
 // density (~230 glyphs per section): anything much brighter competes with
 // the foreground content instead of reading as background texture.
 const tones = {
-  dark: "rgb(124 92 255 / 0.12)",
+  dark: "rgb(124 92 255 / 0.16)",
   light: "rgb(124 92 255 / 0.16)",
 };
 
