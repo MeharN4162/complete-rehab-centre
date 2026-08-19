@@ -14,6 +14,8 @@ import Associations from "@/components/home/Associations";
 import TestimonialsCarousel from "@/components/shared/TestimonialsCarousel";
 import AppointmentForm from "@/components/shared/AppointmentForm";
 import Reveal from "@/components/ui/Reveal";
+import MovingArrows from "@/components/ui/MovingArrows";
+import WaveDivider from "@/components/ui/WaveDivider";
 
 export default function HomePage() {
   return (
@@ -25,15 +27,22 @@ export default function HomePage() {
       <AssessmentsPreview />
       <Associations />
 
-      <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
+      <section className="grain relative overflow-hidden bg-ink py-24 sm:py-32">
+        <WaveDivider color="white" flip />
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-violet/15 blur-[100px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-violet/15 blur-[100px]" />
+        <div
+          aria-hidden
+          className="animate-glow-sweep pointer-events-none absolute left-0 top-1/3 h-72 w-72 rounded-full bg-gradient-to-r from-violet/25 via-gold/15 to-transparent blur-[100px]"
+        />
+        <MovingArrows variant="diagonal" />
         <Container className="relative">
           <SectionHeading eyebrow="Patient stories" title="Your appreciation" light />
           <Reveal delay={220} className="mt-14">
             <TestimonialsCarousel testimonials={testimonials} dark />
           </Reveal>
         </Container>
+        <WaveDivider color="var(--color-bg)" />
       </section>
 
       <ResourcesPreview />

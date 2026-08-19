@@ -7,6 +7,8 @@ import PageHeader from "@/components/shared/PageHeader";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SpotlightCard from "@/components/ui/SpotlightCard";
+import MovingArrows from "@/components/ui/MovingArrows";
+import WaveDivider from "@/components/ui/WaveDivider";
 
 export const metadata: Metadata = {
   title: "Staff",
@@ -39,11 +41,17 @@ export default function StaffPage() {
             </Reveal>
           </div>
         </Container>
+        <WaveDivider color="var(--color-ink)" />
       </section>
 
-      <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
+      <section className="grain relative overflow-hidden bg-ink py-24 sm:py-32">
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-violet/20 blur-[120px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]" />
+        <div
+          aria-hidden
+          className="animate-glow-sweep pointer-events-none absolute left-0 top-1/3 h-72 w-72 rounded-full bg-gradient-to-r from-gold/20 via-violet/25 to-transparent blur-[100px]"
+        />
+        <MovingArrows variant="diagonal" />
         <Container className="relative">
           <SectionHeading eyebrow="Meet the team" title="Treating Practitioners" light />
           <div className="mt-12 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -66,6 +74,7 @@ export default function StaffPage() {
             ))}
           </div>
         </Container>
+        <WaveDivider color="var(--color-bg)" />
       </section>
 
       <section className="relative overflow-hidden py-24 sm:py-28">
@@ -78,7 +87,7 @@ export default function StaffPage() {
             {additionalTeamMembers.map((name, i) => (
               <Reveal key={name} delay={i * 100} dir={i % 2 === 0 ? "left" : "right"}>
                 <p className="flex items-center justify-center gap-2 text-sm text-body">
-                  <Icon name="checkCircle" size={14} className="shrink-0 text-violet-dark" />
+                  <Icon name="checkCircle" size={14} className="icon-pop shrink-0 text-violet-dark" />
                   {name}
                 </p>
               </Reveal>

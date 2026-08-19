@@ -4,6 +4,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Icon, { IconName } from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SpotlightCard from "@/components/ui/SpotlightCard";
+import MovingArrows from "@/components/ui/MovingArrows";
+import WaveDivider from "@/components/ui/WaveDivider";
 
 const features: { icon: IconName; title: string; description: string }[] = [
   {
@@ -40,7 +42,7 @@ const features: { icon: IconName; title: string; description: string }[] = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
+    <section className="grain relative overflow-hidden bg-ink py-24 sm:py-32">
       <div
         aria-hidden
         className="animate-drift-1 pointer-events-none absolute -left-40 top-0 h-[28rem] w-[28rem] rounded-full bg-gold/20 blur-[110px]"
@@ -49,6 +51,11 @@ export default function WhyChooseUs() {
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-violet/10 blur-[110px]"
       />
+      <div
+        aria-hidden
+        className="animate-glow-sweep pointer-events-none absolute left-0 top-1/2 h-72 w-72 rounded-full bg-gradient-to-r from-gold/20 via-violet/25 to-transparent blur-[100px]"
+      />
+      <MovingArrows variant="diagonal" />
 
       <Container className="relative">
         <SectionHeading eyebrow="Why patients choose us" title="Built around your recovery" light />
@@ -60,7 +67,7 @@ export default function WhyChooseUs() {
                 tilt
                 className="glass group relative flex h-full flex-col gap-4 overflow-hidden rounded-2xl p-6 transition-colors duration-300 hover:border-violet/40 hover:shadow-glow-violet"
               >
-                <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-violet ring-1 ring-white/10 transition-all duration-300 group-hover:bg-violet group-hover:text-ink group-hover:ring-violet">
+                <span className="icon-pop relative flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-violet ring-1 ring-white/10 transition-all duration-300 group-hover:bg-violet group-hover:text-ink group-hover:ring-violet">
                   <Icon name={feature.icon} size={22} />
                 </span>
                 <div className="relative">
@@ -72,6 +79,7 @@ export default function WhyChooseUs() {
           ))}
         </div>
       </Container>
+      <WaveDivider color="var(--color-bg)" />
     </section>
   );
 }

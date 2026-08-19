@@ -43,7 +43,7 @@ export default function Hero() {
   }, [active]);
 
   return (
-    <section aria-label="Featured services" className="relative overflow-hidden bg-ink">
+    <section aria-label="Featured services" className="grain relative overflow-hidden bg-ink">
       <div
         aria-hidden
         className="animate-drift-1 pointer-events-none absolute -left-40 -top-40 h-96 w-96 rounded-full bg-violet/20 blur-[120px]"
@@ -52,7 +52,12 @@ export default function Hero() {
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -bottom-40 right-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]"
       />
+      <div
+        aria-hidden
+        className="animate-glow-sweep pointer-events-none absolute left-0 top-1/3 h-72 w-72 rounded-full bg-gradient-to-r from-violet/25 via-gold/15 to-transparent blur-[100px]"
+      />
       <MovingArrows className="top-8" />
+      <MovingArrows variant="diagonal" />
 
       <Container className="relative grid gap-0 py-10 sm:py-14 lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-16">
         {/* Text panel */}

@@ -7,6 +7,8 @@ import PageHeader from "@/components/shared/PageHeader";
 import { LinkButton } from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
+import MovingArrows from "@/components/ui/MovingArrows";
+import WaveDivider from "@/components/ui/WaveDivider";
 import { primaryPhone } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -70,11 +72,17 @@ export default function ServicesPage() {
             </Reveal>
           </div>
         </Container>
+        <WaveDivider color="var(--color-ink)" />
       </section>
 
-      <section className="relative overflow-hidden bg-ink py-24 sm:py-28">
+      <section className="grain relative overflow-hidden bg-ink py-24 sm:py-28">
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-40 top-40 h-96 w-96 rounded-full bg-violet/15 blur-[130px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-40 h-96 w-96 rounded-full bg-gold/10 blur-[130px]" />
+        <div
+          aria-hidden
+          className="animate-glow-sweep pointer-events-none absolute left-0 top-1/4 h-72 w-72 rounded-full bg-gradient-to-r from-violet/25 via-gold/15 to-transparent blur-[100px]"
+        />
+        <MovingArrows variant="diagonal" />
         <Container className="relative space-y-16 sm:space-y-20">
           {services.map((service, index) => (
             <div key={service.slug} id={service.anchor} className="scroll-mt-28">
@@ -109,7 +117,7 @@ export default function ServicesPage() {
                       <ul className="space-y-2">
                         {service.list.map((item) => (
                           <li key={item} className="flex gap-2.5">
-                            <Icon name="check" size={16} className="mt-0.5 shrink-0 text-violet" />
+                            <Icon name="check" size={16} className="icon-pop mt-0.5 shrink-0 text-violet" />
                             {item}
                           </li>
                         ))}
@@ -130,6 +138,7 @@ export default function ServicesPage() {
             </div>
           ))}
         </Container>
+        <WaveDivider color="var(--color-bg)" />
       </section>
 
       <section className="py-24 text-center sm:py-28">

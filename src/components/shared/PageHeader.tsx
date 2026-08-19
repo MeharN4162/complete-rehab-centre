@@ -8,7 +8,7 @@ type PageHeaderProps = {
 
 export default function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
+    <section className="grain relative overflow-hidden bg-ink py-24 sm:py-32">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink via-ink/95 to-ink" />
       <div
         aria-hidden
@@ -17,6 +17,10 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
       <div
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -bottom-40 left-1/4 h-80 w-80 rounded-full bg-gold/20 blur-[100px]"
+      />
+      <div
+        aria-hidden
+        className="animate-glow-sweep pointer-events-none absolute left-0 top-0 h-64 w-64 rounded-full bg-gradient-to-r from-violet/30 via-gold/20 to-transparent blur-[90px]"
       />
       <MovingArrows className="bottom-6" />
       <Container className="relative">
