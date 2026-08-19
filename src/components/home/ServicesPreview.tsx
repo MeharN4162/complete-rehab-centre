@@ -40,8 +40,7 @@ export default function ServicesPreview() {
             return (
               <Reveal key={service.slug} delay={i * 140} dir={i % 2 === 0 ? "up" : "scale"} className={spans[i]}>
                 <SpotlightCard
-                  tilt
-                  className={`group relative h-full min-h-[240px] rounded-[1.4rem] bg-gradient-to-br ${cardBorder} p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-md hover:shadow-glow-violet lg:min-h-0`}
+                  className={`group relative h-full min-h-[240px] rounded-[1.4rem] bg-gradient-to-br ${cardBorder} p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-md transition-transform duration-500 hover:-translate-y-2 hover:shadow-glow-violet lg:min-h-0`}
                 >
                   <Link href={`/services/${service.slug}`} className="relative flex h-full flex-col overflow-hidden rounded-[1.15rem] bg-ink">
                     <Image
