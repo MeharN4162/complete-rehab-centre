@@ -45,11 +45,11 @@ export default function TimePicker({ id, name, required }: TimePickerProps) {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="dialog"
         aria-expanded={open}
-        className="flex w-full items-center justify-between rounded-xl border border-border bg-white px-4 py-3 text-left text-sm outline-none transition-colors focus:border-violet focus:ring-4 focus:ring-violet-tint"
+        className="flex w-full items-center justify-between rounded-xl border border-border bg-white py-3 pl-11 pr-4 text-left text-sm outline-none transition-colors focus:border-violet focus:ring-4 focus:ring-violet-tint"
       >
         <span className={display ? "text-ink" : "text-muted"}>{display || "Select a time"}</span>
-        <Icon name="clock" size={16} className="shrink-0 text-violet-dark" />
       </button>
+      <Icon name="clock" size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" />
 
       <div
         role="dialog"

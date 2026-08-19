@@ -3,6 +3,9 @@
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { heroSlides } from "@/data/about";
+import { services } from "@/data/services";
+import { assessments } from "@/data/assessments";
+import { treatingPractitioners } from "@/data/staff";
 import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
 import MovingArrows from "@/components/ui/MovingArrows";
@@ -14,6 +17,10 @@ const tickerItems = [
   "Open 6 Days a Week",
   "Free & Confidential Calls",
   "Brampton, ON",
+  `${services.length} Treatment Services`,
+  `${treatingPractitioners.length} Expert Practitioners`,
+  `${assessments.length} Medical Assessments`,
+  "Physiotherapy · Chiropractic · Acupuncture · RMT",
 ];
 
 const AUTO_ADVANCE_MS = 5000;
@@ -84,7 +91,7 @@ export default function Hero() {
             >
               <Icon name="chevronLeft" size={15} />
             </button>
-            <div className="flex gap-2">
+            <div className="flex flex-1 gap-2">
               {heroSlides.map((s, index) => (
                 <button
                   key={s.slug}
@@ -92,10 +99,17 @@ export default function Hero() {
                   onClick={() => goTo(index)}
                   aria-label={`Go to ${s.heading} slide`}
                   aria-current={index === active}
-                  className={`h-1.5 rounded-full transition-all ${
-                    index === active ? "w-7 bg-violet" : "w-1.5 bg-white/25"
-                  }`}
-                />
+                  className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/20"
+                >
+                  {index < active && <div className="h-full w-full bg-violet" />}
+                  {index === active && (
+                    <div
+                      key={active}
+                      className="animate-slide-progress h-full bg-violet"
+                      style={{ animationDuration: `${AUTO_ADVANCE_MS}ms` }}
+                    />
+                  )}
+                </button>
               ))}
             </div>
             <button
@@ -125,6 +139,7 @@ export default function Hero() {
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/5 to-transparent" />
                 </div>
               ))}
+              <div key={active} aria-hidden className="sheen-once" />
               <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
             </div>
           </div>

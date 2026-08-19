@@ -30,7 +30,7 @@ export default function AboutUsPage() {
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-violet/20 blur-[120px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]" />
         <Container className="relative">
-          <div className="grid items-center gap-10 md:grid-cols-2">
+          <div className="group grid items-center gap-10 md:grid-cols-2">
             <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-2xl">
               <div className="img-sheen relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
                 <Image

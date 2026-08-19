@@ -25,7 +25,7 @@ export default function ServicesPage() {
 
       <section className="relative overflow-hidden py-24 sm:py-28">
         <Container>
-          <div className="grid gap-10 md:grid-cols-3 md:items-center">
+          <div className="group grid gap-10 md:grid-cols-3 md:items-center">
             <div className="md:col-span-2">
               <Reveal as="h2" dir="left" className="font-heading text-2xl font-semibold text-ink">
                 We specialize in
@@ -78,7 +78,7 @@ export default function ServicesPage() {
         <Container className="relative space-y-16 sm:space-y-20">
           {services.map((service, index) => (
             <div key={service.slug} id={service.anchor} className="scroll-mt-28">
-              <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
+              <div className="group grid items-center gap-8 md:grid-cols-2 md:gap-12">
                 <Reveal
                   dir={index % 2 === 0 ? "left" : "right"}
                   className={`relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl ${index % 2 === 1 ? "md:order-2" : ""}`}

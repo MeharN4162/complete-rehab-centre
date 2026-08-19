@@ -21,7 +21,7 @@ export default function StaffPage() {
 
       <section className="relative overflow-hidden py-24 sm:py-32">
         <Container>
-          <div className="grid items-center gap-10 md:grid-cols-2">
+          <div className="group grid items-center gap-10 md:grid-cols-2">
             <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl">
               <div className="img-sheen relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
                 <Image
