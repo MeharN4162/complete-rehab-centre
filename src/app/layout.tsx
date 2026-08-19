@@ -5,6 +5,7 @@ import { siteConfig, structuredHours } from "@/data/site";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollProgressBar from "@/components/layout/ScrollProgressBar";
+import QuickActions from "@/components/layout/QuickActions";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <QuickActions />
       </body>
     </html>
   );

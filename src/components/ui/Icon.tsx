@@ -43,6 +43,7 @@ export default function Icon({ name, size = 20, strokeWidth = 2, className = "",
     "external",
     "user",
     "mail",
+    "calendar",
   ];
   const isStroke = strokeIcons.includes(name);
 

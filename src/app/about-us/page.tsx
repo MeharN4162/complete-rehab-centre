@@ -32,7 +32,7 @@ export default function AboutUsPage() {
         <Container className="relative">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-2xl">
-              <div className="relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
+              <div className="img-sheen relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
                 <Image
                   src="/images/about-values.jpg"
                   alt="Complete Rehab Centre patient care"

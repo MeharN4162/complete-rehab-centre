@@ -112,7 +112,7 @@ export default function Hero() {
         {/* Image panel — contained, framed, clearly separate from the text */}
         <div className="animate-fade-in-up-2 order-1 mb-8 lg:order-2 lg:mb-0">
           <div className="relative rounded-[1.9rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-2xl">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.65rem] sm:aspect-[16/10]">
+            <div className="img-sheen relative aspect-[4/3] w-full overflow-hidden rounded-[1.65rem] sm:aspect-[16/10]">
               {heroSlides.map((s, index) => (
                 <div
                   key={s.slug}

@@ -29,7 +29,7 @@ export default function ResourcesPreview() {
                 href={`/resources/${article.slug}`}
                 className="group flex flex-col gap-5 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-border transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:ring-violet/30 sm:flex-row sm:items-center"
               >
-                <div className="relative h-40 w-full shrink-0 overflow-hidden rounded-xl ring-1 ring-inset ring-black/5 sm:h-28 sm:w-40">
+                <div className="img-sheen relative h-40 w-full shrink-0 overflow-hidden rounded-xl ring-1 ring-inset ring-black/5 sm:h-28 sm:w-40">
                   <Image
                     src={article.image}
                     alt={article.imageAlt}

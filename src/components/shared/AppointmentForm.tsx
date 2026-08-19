@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { primaryPhone } from "@/data/site";
 import Icon from "@/components/ui/Icon";
 import TimePicker from "@/components/shared/TimePicker";
+import DatePicker from "@/components/shared/DatePicker";
 
 const inputClasses =
   "w-full rounded-xl border border-border bg-white py-3 pl-11 pr-4 text-sm text-ink outline-none transition-colors focus:border-violet focus:ring-4 focus:ring-violet-tint";
@@ -89,10 +90,7 @@ export default function AppointmentForm() {
           <label htmlFor="date" className="mb-1.5 block text-sm font-medium text-ink">
             Preferred Date
           </label>
-          <div className="relative">
-            <Icon name="calendar" size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" />
-            <input id="date" name="date" type="date" required className={inputClasses} />
-          </div>
+          <DatePicker id="date" name="date" required />
         </div>
         <div>
           <label htmlFor="time" className="mb-1.5 block text-sm font-medium text-ink">

@@ -29,7 +29,7 @@ export default function ArticleTemplate({ article }: { article: Article }) {
       <article className="py-14 sm:py-20">
         <Container narrow>
           <Reveal className="relative mb-10 rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl">
-            <div className="relative h-64 w-full overflow-hidden rounded-[1.5rem] sm:h-80">
+            <div className="img-sheen relative h-64 w-full overflow-hidden rounded-[1.5rem] sm:h-80">
               <Image src={article.image} alt={article.imageAlt} fill sizes="768px" className="object-cover" priority />
             </div>
           </Reveal>

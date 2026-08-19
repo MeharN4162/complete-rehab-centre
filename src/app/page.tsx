@@ -68,7 +68,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative min-h-[220px] flex-1 rounded-[1.4rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] transition-transform duration-500 hover:-translate-y-1">
-                  <div className="relative h-full min-h-[214px] overflow-hidden rounded-[1.15rem]">
+                  <div className="img-sheen relative h-full min-h-[214px] overflow-hidden rounded-[1.15rem]">
                     <Image
                       src="/images/hero-medical-assessment.jpg"
                       alt=""

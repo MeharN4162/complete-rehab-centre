@@ -42,7 +42,7 @@ export default function ServicesPage() {
                     </a>
                   </Reveal>
                 ))}
-                <li className="flex items-start gap-2.5 text-body/60">
+                <Reveal as="li" dir="left" delay={200 + services.length * 90} className="flex items-start gap-2.5 text-body/60">
                   <Icon name="chevronRight" size={14} className="mt-1 shrink-0 text-body/40" />
                   <span>
                     Social Work / Case Management{" "}
@@ -54,11 +54,11 @@ export default function ServicesPage() {
                       for details)
                     </span>
                   </span>
-                </li>
+                </Reveal>
               </ul>
             </div>
             <Reveal dir="right" delay={250} className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-lg">
-              <div className="relative h-64 overflow-hidden rounded-[1.5rem] md:h-80">
+              <div className="img-sheen relative h-64 overflow-hidden rounded-[1.5rem] md:h-80">
                 <Image
                   src="/images/services-intro.jpg"
                   alt="Complete Rehab Centre treatment services"
@@ -83,7 +83,7 @@ export default function ServicesPage() {
                   dir={index % 2 === 0 ? "left" : "right"}
                   className={`relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl ${index % 2 === 1 ? "md:order-2" : ""}`}
                 >
-                  <div className="relative h-64 overflow-hidden rounded-[1.5rem] sm:h-80">
+                  <div className="img-sheen relative h-64 overflow-hidden rounded-[1.5rem] sm:h-80">
                     <Image
                       src={service.image}
                       alt={service.imageAlt}

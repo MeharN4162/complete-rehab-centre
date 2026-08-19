@@ -26,7 +26,7 @@ export default function AppointmentPage() {
         <Container className="relative">
           <div className="grid gap-8 lg:grid-cols-5">
             <Reveal dir="left" className="relative min-h-[320px] rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl lg:col-span-2">
-              <div className="relative h-full min-h-[314px] overflow-hidden rounded-[1.5rem]">
+              <div className="img-sheen relative h-full min-h-[314px] overflow-hidden rounded-[1.5rem]">
                 <Image
                   src="/images/hero-medical-assessment.jpg"
                   alt="Complete Rehab Centre clinic"

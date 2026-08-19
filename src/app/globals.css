@@ -109,26 +109,6 @@
   }
 }
 
-/* The native date input still uses the browser's own calendar picker (just a
-   dropdown, not an OS scroll-wheel) so restyling its small icon glyph is
-   enough here. The time input's picker was a full native scroll-wheel widget
-   that CSS can't reach past the icon — that one got replaced outright with
-   TimePicker.tsx instead of styled around. */
-input[type="date"] {
-  color-scheme: light;
-}
-input[type="date"]::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  padding: 6px;
-  margin-right: -4px;
-  border-radius: 9999px;
-  filter: invert(29%) sepia(95%) saturate(2230%) hue-rotate(246deg) brightness(98%) contrast(101%);
-  transition: background-color 0.2s ease;
-}
-input[type="date"]::-webkit-calendar-picker-indicator:hover {
-  background-color: rgb(124 92 255 / 0.12);
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -336,6 +316,34 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   animation: sheen 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Fast diagonal shine sweep on hover, for photo frames rather than buttons —
+   wider band, quicker timing than .btn-sheen. Add directly to the element
+   that should render the sweep; it must already be position:relative and
+   overflow:hidden (every gradient-border image frame on this site is). */
+@keyframes img-sheen {
+  from { transform: translateX(-150%) skewX(-20deg); }
+  to { transform: translateX(250%) skewX(-20deg); }
+}
+.img-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  width: 40%;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgb(255 255 255 / 0.45) 45%,
+    rgb(255 255 255 / 0.45) 55%,
+    transparent 100%
+  );
+  transform: translateX(-150%) skewX(-20deg);
+  pointer-events: none;
+}
+.img-sheen:hover::after {
+  animation: img-sheen 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Slow ambient rotation, used behind icon badges for a "live" feel */
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
@@ -348,7 +356,8 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   .animate-pulse-slow,
   .animate-float-slow,
   .animate-spin-slow,
-  .btn-sheen::after {
+  .btn-sheen::after,
+  .img-sheen::after {
     animation: none;
   }
 }

@@ -19,7 +19,7 @@ export default function ServiceDetailTemplate({ service }: { service: Service })
         <Container>
           <div className="grid items-start gap-10 lg:grid-cols-2">
             <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl">
-              <div className="relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
+              <div className="img-sheen relative h-72 overflow-hidden rounded-[1.5rem] sm:h-96">
                 <Image
                   src={service.image}
                   alt={service.imageAlt}
