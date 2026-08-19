@@ -8,6 +8,7 @@ import Reveal from "@/components/ui/Reveal";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 import ConstellationDots from "@/components/ui/ConstellationDots";
 import DustMotes from "@/components/ui/DustMotes";
+import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export const metadata: Metadata = {
   title: "Testimonials",
@@ -23,6 +24,7 @@ export default function TestimonialsPage() {
         <div aria-hidden className="pointer-events-none absolute -right-40 top-40 h-96 w-96 rounded-full bg-violet-tint blur-3xl" />
         <div aria-hidden className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-tint blur-3xl" />
         <DustMotes />
+        <RotatingGlyphs tone="light" />
         <Container className="relative">
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((t, i) => (
@@ -45,6 +47,7 @@ export default function TestimonialsPage() {
           <Reveal className="relative mt-16 overflow-hidden rounded-3xl bg-ink px-8 py-12 text-center">
             <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-violet/25 blur-[100px]" />
             <ConstellationDots count={10} />
+            <RotatingGlyphs tone="dark" />
             <Reveal as="h2" dir="scale" className="relative font-heading text-xl font-semibold text-white sm:text-2xl">
               Had a great experience with us?
             </Reveal>

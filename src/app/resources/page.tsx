@@ -8,6 +8,7 @@ import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 import DustMotes from "@/components/ui/DustMotes";
+import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export const metadata: Metadata = {
   title: "Resources",
@@ -23,6 +24,7 @@ export default function ResourcesPage() {
         <div aria-hidden className="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-violet-tint blur-3xl" />
         <div aria-hidden className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-gold-tint blur-3xl" />
         <DustMotes />
+        <RotatingGlyphs tone="light" />
         <Container className="relative">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((article, i) => (

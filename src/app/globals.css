@@ -484,12 +484,51 @@
   animation: dust-float linear infinite;
 }
 
+/* RotatingGlyphs: a small "+" built from two bars, slowly rotating into an
+   "×" and back — a fixed, deliberate pattern rather than a random scatter.
+   No `position` rule of its own on purpose: the span already carries
+   Tailwind's `absolute` utility for placement, which also makes it a valid
+   positioned ancestor for the ::before/::after bars below — an unlayered
+   `position: relative` here would silently beat that utility (same cascade-
+   layer precedence trap as .tilt-card above) and collapse it to 0×0, since
+   an inline element with position:relative (unlike absolute/fixed) doesn't
+   switch to a block-level box and so ignores its own width/height. */
+.cross-glyph::before,
+.cross-glyph::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  border-radius: 1px;
+}
+.cross-glyph::before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform: translateY(-50%);
+}
+.cross-glyph::after {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+}
+@keyframes cross-rotate {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(45deg); }
+}
+.animate-cross-rotate {
+  animation: cross-rotate ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal="true"] .icon-pop {
     animation: none;
   }
   .animate-star-pulse,
-  .animate-dust-float {
+  .animate-dust-float,
+  .animate-cross-rotate {
     animation: none;
     opacity: 0.25;
   }

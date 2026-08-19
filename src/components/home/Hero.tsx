@@ -10,6 +10,7 @@ import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
 import { LinkButton } from "@/components/ui/Button";
 import ConstellationDots from "@/components/ui/ConstellationDots";
+import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 const tickerItems = [
   "Multidisciplinary Care Team",
@@ -20,7 +21,6 @@ const tickerItems = [
   `${services.length} Treatment Services`,
   `${treatingPractitioners.length} Expert Practitioners`,
   `${assessments.length} Medical Assessments`,
-  "Physiotherapy · Chiropractic · Acupuncture · RMT",
 ];
 
 const AUTO_ADVANCE_MS = 5000;
@@ -53,6 +53,7 @@ export default function Hero() {
         className="animate-drift-2 pointer-events-none absolute -bottom-40 right-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]"
       />
       <ConstellationDots />
+      <RotatingGlyphs tone="dark" />
       <Container className="relative grid gap-0 py-10 sm:py-14 lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-16">
         {/* Text panel */}
         <div className="order-2 lg:order-1">

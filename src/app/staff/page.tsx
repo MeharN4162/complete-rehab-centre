@@ -10,6 +10,7 @@ import SpotlightCard from "@/components/ui/SpotlightCard";
 import WaveDivider from "@/components/ui/WaveDivider";
 import ConstellationDots from "@/components/ui/ConstellationDots";
 import DustMotes from "@/components/ui/DustMotes";
+import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export const metadata: Metadata = {
   title: "Staff",
@@ -24,6 +25,7 @@ export default function StaffPage() {
 
       <section className="relative overflow-hidden py-24 sm:py-32">
         <DustMotes />
+        <RotatingGlyphs tone="light" />
         <Container>
           <div className="group grid items-center gap-10 md:grid-cols-2">
             <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-xl">
@@ -50,6 +52,7 @@ export default function StaffPage() {
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-violet/20 blur-[120px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]" />
         <ConstellationDots />
+        <RotatingGlyphs tone="dark" />
         <Container className="relative">
           <SectionHeading eyebrow="Meet the team" title="Treating Practitioners" light />
           <div className="mt-12 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -78,6 +81,7 @@ export default function StaffPage() {
       <section className="relative overflow-hidden py-24 sm:py-28">
         <div aria-hidden className="animate-float-slow pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-tint/60 blur-3xl" />
         <DustMotes count={10} />
+        <RotatingGlyphs tone="light" />
         <Container className="relative">
           <Reveal>
             <h2 className="text-center font-heading text-xl font-semibold text-ink">Also Part of Our Team</h2>

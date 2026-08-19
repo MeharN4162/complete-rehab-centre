@@ -17,6 +17,7 @@ import Reveal from "@/components/ui/Reveal";
 import WaveDivider from "@/components/ui/WaveDivider";
 import ConstellationDots from "@/components/ui/ConstellationDots";
 import DustMotes from "@/components/ui/DustMotes";
+import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export default function HomePage() {
   return (
@@ -33,6 +34,7 @@ export default function HomePage() {
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-violet/15 blur-[100px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-violet/15 blur-[100px]" />
         <ConstellationDots />
+        <RotatingGlyphs tone="dark" />
         <Container className="relative">
           <SectionHeading eyebrow="Patient stories" title="Your appreciation" light />
           <Reveal delay={220} className="mt-14">
@@ -47,6 +49,7 @@ export default function HomePage() {
       <section className="relative overflow-hidden pb-24 sm:pb-32">
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-0 h-96 w-[36rem] -translate-x-1/2 rounded-full bg-violet-tint/70 blur-3xl" />
         <DustMotes />
+        <RotatingGlyphs tone="light" />
         <Container className="relative">
           <div className="relative overflow-hidden rounded-3xl bg-bg-alt shadow-sm ring-1 ring-border">
             <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold-tint blur-3xl" />

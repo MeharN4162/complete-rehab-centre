@@ -8,6 +8,7 @@ import Icon from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import ConstellationDots from "@/components/ui/ConstellationDots";
 import DustMotes from "@/components/ui/DustMotes";
+import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -22,6 +23,7 @@ export default function AboutUsPage() {
 
       <section className="relative overflow-hidden py-24 sm:py-32">
         <DustMotes count={8} />
+        <RotatingGlyphs tone="light" />
         <Container narrow>
           <Reveal>
             <p className="text-center text-lg leading-relaxed text-body">{aboutContent.intro}</p>
@@ -33,6 +35,7 @@ export default function AboutUsPage() {
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-40 top-0 h-96 w-96 rounded-full bg-violet/20 blur-[120px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]" />
         <ConstellationDots />
+        <RotatingGlyphs tone="dark" />
         <Container className="relative">
           <div className="group grid items-center gap-10 md:grid-cols-2">
             <Reveal dir="left" className="relative rounded-[1.75rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-2xl">
@@ -71,6 +74,7 @@ export default function AboutUsPage() {
       <section className="relative overflow-hidden py-24 sm:py-32">
         <div aria-hidden className="animate-float-slow pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-tint/60 blur-3xl" />
         <DustMotes count={8} />
+        <RotatingGlyphs tone="light" />
         <Container narrow className="relative">
           <SectionHeading eyebrow="Our promise" title="Our Vision" subtitle={aboutContent.vision} />
         </Container>

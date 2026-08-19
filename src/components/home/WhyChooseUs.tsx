@@ -6,6 +6,7 @@ import Reveal from "@/components/ui/Reveal";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 import WaveDivider from "@/components/ui/WaveDivider";
 import ConstellationDots from "@/components/ui/ConstellationDots";
+import RotatingGlyphs from "@/components/ui/RotatingGlyphs";
 
 const features: { icon: IconName; title: string; description: string }[] = [
   {
@@ -52,6 +53,7 @@ export default function WhyChooseUs() {
         className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-violet/10 blur-[110px]"
       />
       <ConstellationDots />
+      <RotatingGlyphs tone="dark" />
       <Container className="relative">
         <SectionHeading eyebrow="Why patients choose us" title="Built around your recovery" light />
 
