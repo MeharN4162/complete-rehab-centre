@@ -4,7 +4,6 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Icon, { IconName } from "@/components/ui/Icon";
 import Reveal from "@/components/ui/Reveal";
 import SpotlightCard from "@/components/ui/SpotlightCard";
-import MovingArrows from "@/components/ui/MovingArrows";
 import WaveDivider from "@/components/ui/WaveDivider";
 
 const features: { icon: IconName; title: string; description: string }[] = [
@@ -51,12 +50,6 @@ export default function WhyChooseUs() {
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-violet/10 blur-[110px]"
       />
-      <div
-        aria-hidden
-        className="animate-glow-sweep pointer-events-none absolute left-0 top-1/2 h-72 w-72 rounded-full bg-gradient-to-r from-gold/20 via-violet/25 to-transparent blur-[100px]"
-      />
-      <MovingArrows variant="diagonal" />
-
       <Container className="relative">
         <SectionHeading eyebrow="Why patients choose us" title="Built around your recovery" light />
 

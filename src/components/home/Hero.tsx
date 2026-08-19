@@ -8,7 +8,6 @@ import { assessments } from "@/data/assessments";
 import { treatingPractitioners } from "@/data/staff";
 import Container from "@/components/ui/Container";
 import Icon from "@/components/ui/Icon";
-import MovingArrows from "@/components/ui/MovingArrows";
 import { LinkButton } from "@/components/ui/Button";
 
 const tickerItems = [
@@ -52,13 +51,6 @@ export default function Hero() {
         aria-hidden
         className="animate-drift-2 pointer-events-none absolute -bottom-40 right-0 h-80 w-80 rounded-full bg-gold/15 blur-[120px]"
       />
-      <div
-        aria-hidden
-        className="animate-glow-sweep pointer-events-none absolute left-0 top-1/3 h-72 w-72 rounded-full bg-gradient-to-r from-violet/25 via-gold/15 to-transparent blur-[100px]"
-      />
-      <MovingArrows className="top-8" />
-      <MovingArrows variant="diagonal" />
-
       <Container className="relative grid gap-0 py-10 sm:py-14 lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-16">
         {/* Text panel */}
         <div className="order-2 lg:order-1">
@@ -96,26 +88,12 @@ export default function Hero() {
             >
               <Icon name="chevronLeft" size={15} />
             </button>
-            <div className="flex flex-1 gap-2">
-              {heroSlides.map((s, index) => (
-                <button
-                  key={s.slug}
-                  type="button"
-                  onClick={() => goTo(index)}
-                  aria-label={`Go to ${s.heading} slide`}
-                  aria-current={index === active}
-                  className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/20"
-                >
-                  {index < active && <div className="h-full w-full bg-violet" />}
-                  {index === active && (
-                    <div
-                      key={active}
-                      className="animate-slide-progress h-full bg-violet"
-                      style={{ animationDuration: `${AUTO_ADVANCE_MS}ms` }}
-                    />
-                  )}
-                </button>
-              ))}
+            <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/20" aria-hidden>
+              <div
+                key={active}
+                className="animate-slide-progress h-full bg-violet"
+                style={{ animationDuration: `${AUTO_ADVANCE_MS}ms` }}
+              />
             </div>
             <button
               type="button"
@@ -131,7 +109,7 @@ export default function Hero() {
         {/* Image panel — contained, framed, clearly separate from the text */}
         <div className="animate-fade-in-up-2 order-1 mb-8 lg:order-2 lg:mb-0">
           <div className="relative rounded-[1.9rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] shadow-2xl">
-            <div className="img-sheen relative aspect-[4/3] w-full overflow-hidden rounded-[1.65rem] sm:aspect-[16/10]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.65rem] sm:aspect-[16/10]">
               {heroSlides.map((s, index) => (
                 <div
                   key={s.slug}

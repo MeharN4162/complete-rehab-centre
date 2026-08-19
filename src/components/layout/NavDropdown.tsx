@@ -40,7 +40,7 @@ export default function NavDropdown({ open, onClose }: NavDropdownProps) {
           className="animate-drift-2 pointer-events-none absolute -bottom-16 -left-16 h-32 w-32 rounded-full bg-gold/10 blur-[70px]"
         />
 
-        <div className="relative max-h-[75vh] overflow-y-auto overflow-x-hidden p-3">
+        <div className="scrollbar-light relative max-h-[75vh] overflow-y-auto overflow-x-hidden p-3">
           <nav aria-label="Primary">
             <ul className="space-y-1">
               {navLinks.map((link, i) => {
@@ -89,7 +89,7 @@ export default function NavDropdown({ open, onClose }: NavDropdownProps) {
                             the outer grid track) needs its own `overflow-hidden` to actually
                             reach zero height. */}
                         <div className="overflow-hidden">
-                          <ul id="services-submenu" className="ml-11 mr-1 mt-1 mb-1.5 max-h-56 space-y-1.5 overflow-y-auto overflow-x-hidden rounded-lg bg-white/5 p-2.5">
+                          <ul id="services-submenu" className="scrollbar-light ml-11 mr-1 mt-1 mb-1.5 max-h-56 space-y-1.5 overflow-y-auto overflow-x-hidden rounded-lg bg-white/5 p-2.5">
                             {link.children.map((child, j) => (
                               <li key={child.href}>
                                 <Link

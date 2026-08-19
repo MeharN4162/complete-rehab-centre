@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { detailServices, Service } from "@/data/services";
+import { Service } from "@/data/services";
 import Container from "@/components/ui/Container";
 import PageHeader from "@/components/shared/PageHeader";
 import Icon from "@/components/ui/Icon";
@@ -9,8 +8,6 @@ import { primaryPhone } from "@/data/site";
 import Reveal from "@/components/ui/Reveal";
 
 export default function ServiceDetailTemplate({ service }: { service: Service }) {
-  const related = detailServices.filter((s) => s.slug !== service.slug);
-
   return (
     <>
       <PageHeader title={service.name} subtitle={service.shortDescription} />
@@ -57,32 +54,6 @@ export default function ServiceDetailTemplate({ service }: { service: Service })
               </div>
             </Reveal>
           </div>
-        </Container>
-      </section>
-
-      <section className="relative overflow-hidden bg-ink py-14">
-        <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full bg-violet/20 blur-[100px]" />
-        <Container className="relative">
-          <Reveal>
-            <h2 className="font-heading text-xl font-semibold text-white">Related Services</h2>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {related.map((r) => (
-                <Link
-                  key={r.slug}
-                  href={`/services/${r.slug}`}
-                  className="rounded-full border-2 border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-violet hover:text-violet"
-                >
-                  {r.name}
-                </Link>
-              ))}
-              <Link
-                href="/services"
-                className="btn-sheen rounded-full bg-violet-dim px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-violet-dark"
-              >
-                View All Services
-              </Link>
-            </div>
-          </Reveal>
         </Container>
       </section>
     </>

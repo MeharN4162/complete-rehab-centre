@@ -14,7 +14,6 @@ import Associations from "@/components/home/Associations";
 import TestimonialsCarousel from "@/components/shared/TestimonialsCarousel";
 import AppointmentForm from "@/components/shared/AppointmentForm";
 import Reveal from "@/components/ui/Reveal";
-import MovingArrows from "@/components/ui/MovingArrows";
 import WaveDivider from "@/components/ui/WaveDivider";
 
 export default function HomePage() {
@@ -31,11 +30,6 @@ export default function HomePage() {
         <WaveDivider color="white" flip />
         <div aria-hidden className="animate-drift-1 pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-violet/15 blur-[100px]" />
         <div aria-hidden className="animate-drift-2 pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-violet/15 blur-[100px]" />
-        <div
-          aria-hidden
-          className="animate-glow-sweep pointer-events-none absolute left-0 top-1/3 h-72 w-72 rounded-full bg-gradient-to-r from-violet/25 via-gold/15 to-transparent blur-[100px]"
-        />
-        <MovingArrows variant="diagonal" />
         <Container className="relative">
           <SectionHeading eyebrow="Patient stories" title="Your appreciation" light />
           <Reveal delay={220} className="mt-14">
@@ -77,7 +71,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative min-h-[220px] flex-1 rounded-[1.4rem] bg-gradient-to-br from-violet via-violet-dim to-violet p-[3px] animate-border-shimmer bg-[length:220%_220%] transition-transform duration-500 hover:-translate-y-1">
-                  <div className="img-sheen relative h-full min-h-[214px] overflow-hidden rounded-[1.15rem]">
+                  <div className="img-sheen no-hover-sheen relative h-full min-h-[214px] overflow-hidden rounded-[1.15rem]">
                     <Image
                       src="/images/hero-medical-assessment.jpg"
                       alt=""

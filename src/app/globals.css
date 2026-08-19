@@ -197,13 +197,8 @@
 .animate-marquee {
   animation: marquee 28s linear infinite;
 }
-/* Same keyframe, played backwards — content drifts left-to-right instead. */
-.animate-marquee-reverse {
-  animation: marquee 34s linear infinite reverse;
-}
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee,
-  .animate-marquee-reverse {
+  .animate-marquee {
     animation: none;
   }
 }
@@ -347,9 +342,21 @@
 /* Auto-play the same sweep once, with no hover needed, the moment the photo's
    Reveal wrapper scrolls into view — data-reveal flips to "true" only once
    (Reveal.tsx disconnects its observer after the first trigger), so this
-   selector newly matching is itself the one-shot trigger. */
+   selector newly matching is itself the one-shot trigger.
+   No `both`/`forwards` here on purpose: the skewed band's *ending* transform
+   (translateX(250%)) is skewed enough that its bottom-right corner still
+   grazes the visible box, so holding that end state left a faint sliver
+   parked in the corner forever. Reverting to the same off-screen resting
+   transform the hover trigger already uses (default fill-mode) avoids it. */
 [data-reveal="true"] .img-sheen::after {
-  animation: img-sheen 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+  animation: img-sheen 1s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+/* Opt out of the hover trigger for images that should only ever auto-play
+   (e.g. the homepage) — the reveal/auto trigger above still applies since it
+   targets [data-reveal="true"] rather than :hover. */
+.img-sheen.no-hover-sheen:hover::after,
+.group:hover .img-sheen.no-hover-sheen::after {
+  animation: none;
 }
 
 /* Explicit, JS-mounted sheen sweep for content that auto-rotates on a timer
@@ -370,7 +377,9 @@
   );
   transform: translateX(-150%) skewX(-20deg);
   pointer-events: none;
-  animation: img-sheen 1.1s cubic-bezier(0.4, 0, 0.2, 1) both;
+  /* No `both` here either — same residual-corner issue as above; reverting to
+     the resting transform declared just above after each play is correct. */
+  animation: img-sheen 1.1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Stories-style per-slide progress bar for the Hero slideshow. */
@@ -422,20 +431,6 @@
   }
 }
 
-/* Ambient glow that drifts diagonally across a dark section on a long, slow
-   loop — independent of scroll or hover, just a quiet sign of life behind
-   the content. Pair with a large blurred gradient-filled div. */
-@keyframes glow-sweep {
-  0% { transform: translate(-20%, 10%); opacity: 0; }
-  15% { opacity: 0.6; }
-  50% { transform: translate(55%, -15%); opacity: 0.7; }
-  85% { opacity: 0.25; }
-  100% { transform: translate(130%, 5%); opacity: 0; }
-}
-.animate-glow-sweep {
-  animation: glow-sweep 17s ease-in-out infinite;
-}
-
 /* One-shot pop-in for small accent icons (checkmarks, badge glyphs) — plays
    once the moment its Reveal ancestor scrolls into view, same one-shot
    mechanism as the img-sheen auto-trigger above. */
@@ -466,24 +461,51 @@
   background-size: 180px 180px;
 }
 
-/* Magnetic pull for primary CTA buttons — LinkButton/Button set the actual
-   translate via inline style on mousemove (see Button.tsx), this just owns
-   the easing so the pull and release both animate smoothly. */
-.magnetic {
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change: transform;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .animate-glow-sweep,
   [data-reveal="true"] .icon-pop {
     animation: none;
   }
   .grain::after {
     display: none;
   }
-  .magnetic {
-    transform: none !important;
-    transition: none;
-  }
+}
+
+/* Brand-colored page scrollbar instead of the browser default. */
+html {
+  scrollbar-color: var(--color-violet) var(--color-bg-alt);
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-violet), var(--color-gold));
+  border-radius: 999px;
+  border: 2px solid var(--color-bg-alt);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-violet-dim);
+}
+
+/* Light scrollbar for scrollable panels on dark backgrounds (the nav
+   dropdown), where the brand-violet scrollbar above would be too dark to
+   read clearly against the panel's own violet/ink tones. */
+.scrollbar-light {
+  scrollbar-color: rgb(255 255 255 / 0.35) transparent;
+  scrollbar-width: thin;
+}
+.scrollbar-light::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-light::-webkit-scrollbar-thumb {
+  background: rgb(255 255 255 / 0.35);
+  border-radius: 999px;
+  border: none;
+}
+.scrollbar-light::-webkit-scrollbar-thumb:hover {
+  background: rgb(255 255 255 / 0.55);
 }
