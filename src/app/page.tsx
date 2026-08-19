@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Icon from "@/components/ui/Icon";
 import Hero from "@/components/home/Hero";
+import StatsStrip from "@/components/home/StatsStrip";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesPreview from "@/components/home/ServicesPreview";
 import PatientJourney from "@/components/home/PatientJourney";
@@ -19,6 +20,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <StatsStrip />
       <WhyChooseUs />
       <ServicesPreview />
       <PatientJourney />
