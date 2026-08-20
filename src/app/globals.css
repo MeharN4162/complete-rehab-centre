@@ -514,21 +514,12 @@
   width: 1.5px;
   transform: translateX(-50%);
 }
-@keyframes cross-rotate {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(45deg); }
-}
-.animate-cross-rotate {
-  animation: cross-rotate ease-in-out infinite;
-}
-
 @media (prefers-reduced-motion: reduce) {
   [data-reveal="true"] .icon-pop {
     animation: none;
   }
   .animate-star-pulse,
-  .animate-dust-float,
-  .animate-cross-rotate {
+  .animate-dust-float {
     animation: none;
     opacity: 0.25;
   }
